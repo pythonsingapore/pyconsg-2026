@@ -1,0 +1,429 @@
+/* PyCon Singapore 2026 - Responsive Styles */
+
+/* Mobile First Approach - Base styles are for mobile */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+  .container {
+    padding: 0 var(--spacing-3);
+  }
+  
+  /* Typography adjustments for small screens */
+  .hero-title-main {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-title-year {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .hero-description {
+    font-size: var(--font-size-base);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  /* Navigation */
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  /* Hero section adjustments */
+  .hero-content {
+    padding-top: var(--spacing-16);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Info grid - single column on mobile */
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  /* Speakers section - stack vertically */
+  .speakers-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .speakers-visual {
+    order: -1; /* Move visual above text on mobile */
+  }
+  
+  .placeholder-graphic {
+    width: 250px;
+    height: 250px;
+  }
+  
+  /* Form adjustments */
+  .signup-form .form-group {
+    flex-direction: column;
+  }
+  
+  .signup-form .btn {
+    width: 100%;
+  }
+  
+  /* Sponsor grids - fewer columns */
+  .gold-grid,
+  .silver-grid,
+  .bronze-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer - single column */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  /* Reduce section padding */
+  section {
+    padding: var(--spacing-12) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-10);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Navigation improvements */
+  .nav-menu {
+    gap: var(--spacing-6);
+  }
+  
+  /* Hero adjustments */
+  .hero-title-main {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  /* Info grid - 2 columns */
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Speakers section adjustments */
+  .speakers-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .placeholder-graphic {
+    width: 280px;
+    height: 280px;
+  }
+  
+  /* Sponsor grids */
+  .gold-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .silver-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bronze-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Footer - 2 columns */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Navigation */
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* Info grid - 2 columns */
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Speakers section - side by side */
+  .speakers-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-10);
+  }
+  
+  .speakers-visual {
+    order: 0;
+  }
+  
+  /* Sponsor grids */
+  .gold-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .silver-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .bronze-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Footer - 3 columns */
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  /* Full desktop layout */
+  .info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .speakers-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+  }
+  
+  /* Sponsor grids - full layout */
+  .gold-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .silver-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .bronze-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Footer - 4 columns */
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra extra large devices (1400px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  /* Larger hero text for very large screens */
+  .hero-title-main {
+    font-size: var(--font-size-6xl);
+  }
+  
+  .hero-title-year {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    min-height: auto;
+    padding: var(--spacing-20) 0;
+  }
+  
+  .hero-content {
+    padding-top: var(--spacing-12);
+  }
+  
+  .hero-title-main {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-title-year {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp rendering on high DPI displays */
+  .hero-background {
+    background-size: cover;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gray-50: #1F2937;
+    --gray-100: #374151;
+    --gray-200: #4B5563;
+    --gray-300: #6B7280;
+    --gray-400: #9CA3AF;
+    --gray-500: #D1D5DB;
+    --gray-600: #E5E7EB;
+    --gray-700: #F3F4F6;
+    --gray-800: #F9FAFB;
+    --gray-900: #FFFFFF;
+  }
+  
+  body {
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+  }
+  
+  .navbar {
+    background-color: rgba(31, 41, 55, 0.95);
+    border-bottom-color: var(--gray-200);
+  }
+  
+  .info-card {
+    background-color: var(--gray-100);
+  }
+  
+  .sponsors-section {
+    background-color: var(--gray-50);
+  }
+  
+  .sponsor-placeholder {
+    background-color: var(--gray-200);
+    border-color: var(--gray-300);
+    color: var(--gray-500);
+  }
+  
+  .sponsor-cta {
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .hero-actions,
+  .speaker-signup,
+  .sponsor-cta,
+  .social-links {
+    display: none;
+  }
+  
+  .hero-section {
+    min-height: auto;
+    background: none;
+    color: black;
+  }
+  
+  .call-for-speakers {
+    background: none;
+    color: black;
+  }
+  
+  .footer {
+    background: none;
+    color: black;
+  }
+  
+  * {
+    box-shadow: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.nav-link:focus,
+.social-link:focus,
+input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects for interactive elements */
+@media (hover: hover) {
+  .info-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .social-link:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+}
