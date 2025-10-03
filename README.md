@@ -1,2 +1,2 @@
-# pycon-2026
+# pyconsg-2026
 PyCon Singapore 2026 site
