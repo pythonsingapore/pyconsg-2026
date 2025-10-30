@@ -343,6 +343,59 @@ section {
   margin: 0 auto;
 }
 
+/* Generic Cards & Grids (used by workshops.html and other pages) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.card {
+  background-color: var(--sg-white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-body {
+  padding: var(--spacing-8);
+}
+
+.card-title {
+  font-size: var(--font-size-2xl);
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-3);
+}
+
+.card-meta {
+  color: var(--gray-500);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-4);
+}
+
+.actions {
+  margin-top: var(--spacing-4);
+}
+
+.muted {
+  color: var(--gray-600);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeUp 300ms ease-out both;
+}
+
 /* Conference Info Section */
 .conference-info {
   background-color: var(--gray-50);
