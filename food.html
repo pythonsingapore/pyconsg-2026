@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCon Singapore 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        pyblue: '#306998',
+                        pyyellow: '#FFD43B',
+                        'sg-orchid': '#9932CC',
+                        'sg-red': '#EF3340',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+        }
+        .dark .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #FFD43B, #EF3340);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.9));
+        }
+        .dark .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 1));
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white"><nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="index.html">
+                <img src="assets/logo-icon.svg" alt="PyCon SG 2026 Logo"
+                    class="h-10 w-auto hover:opacity-90 transition-opacity">
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html#speakers" class="hover:text-sg-red transition-colors">Speakers</a>
+            <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
+            <a href="#" class="hover:text-sg-red transition-colors">Venue</a>
+        </div>
+        <button id="theme-toggle" class="hidden md:flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 mr-4 dark:border-white/20 dark:hover:bg-white/10"></button>
+        <a href="index.html#sponsors"
+            class="bg-gradient-to-r from-sg-orchid to-sg-red px-6 py-2 rounded-full font-bold text-white hover:opacity-90 transition-opacity shadow-lg">
+            Sponsor Us
+        </a>
+    </div>
+</nav><div class='min-h-screen flex items-center justify-center text-3xl font-bold text-gray-500'>Coming Soon</div>
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-[#0f0f1a] border-t border-gray-200 dark:border-white/10 pt-16 pb-8 text-gray-600 dark:text-gray-400 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
+        <!-- About -->
+        <div>
+            <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">About</h3>
+            <p class="leading-relaxed mb-4">
+                PyConSG 2026 is a community conference organised by
+                <a href="https://pugs.org.sg" target="_blank" rel="noopener noreferrer" class="text-sg-red hover:underline dark:hover:text-white">Python User Group Singapore</a>.
+                Meet the organising team <a href="team.html" class="text-sg-red hover:underline dark:hover:text-white">here</a>!
+            </p>
+            <p class="leading-relaxed">
+                All attendees must strictly adhere to the <a href="coc.html" class="text-sg-red hover:underline dark:hover:text-white">code
+                    of conduct</a> during the conference.
+            </p>
+        </div>
+
+        <!-- When & Where -->
+        <div>
+            <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">When & Where</h3>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-semibold mb-1">When:</h4>
+                    <p>18th - 20th June 2026</p>
+                </div>
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-semibold mb-1">Where:</h4>
+                    <p>TBA</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+            <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">Social Media:</h3>
+            <ul class="space-y-3">
+                <li>
+                    <a href="https://www.linkedin.com/company/python-user-group-singapore/"
+                        class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        Linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/groups/pythonsg/"
+                        class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                        Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://groups.google.com/forum/#%21forum/pythonsg"
+                        class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        Mailing List
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:pyconsg@computing.sg" class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                            </path>
+                        </svg>
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+</footer>
+
+<script>
+    (function() {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialDark = stored ? stored === 'dark' : prefersDark;
+        document.documentElement.classList.toggle('dark', initialDark);
+        const hero = document.getElementById('hero-image');
+        const sets = [
+            { day: 'assets/marinabaysandsday.jpeg', night: 'assets/marinabaysandsnight.jpeg' },
+            { day: 'assets/gardensbythebayday.jpeg', night: 'assets/gardensbythebaynight.jpeg' },
+            { day: 'assets/changijewelday.jpeg', night: 'assets/changijewelnight.jpeg' }
+        ];
+        const heroIndex = Math.floor(Math.random() * sets.length);
+        function updateHero(isDark) {
+            if (!hero) return;
+            hero.src = isDark ? sets[heroIndex].night : sets[heroIndex].day;
+        }
+        updateHero(initialDark);
+
+        const btn = document.getElementById('theme-toggle');
+        function render() {
+            if (!btn) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.innerHTML = isDark
+                ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><span class="ml-2">Dark</span>'
+                : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M8.05 8.05L6.636 6.636m10.728 0l-1.414 1.414M8.05 15.95l-1.414 1.414"/></svg><span class="ml-2">Light</span>';
+        }
+        render();
+        if (btn) {
+            btn.addEventListener('click', function() {
+                const nowDark = !document.documentElement.classList.contains('dark');
+                document.documentElement.classList.toggle('dark', nowDark);
+                localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+                render();
+                updateHero(nowDark);
+            });
+        }
+    })();
+</script>
+
+</body>
+
+</html>

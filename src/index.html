@@ -1,0 +1,176 @@
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img id="hero-image" src="assets/hero-bg.png" alt="Singapore Landmark" class="w-full h-full object-cover">
+        <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+        <div
+            class="inline-block mb-4 px-4 py-1 rounded-full border border-sg-red/20 bg-sg-red/10 text-sm font-mono text-sg-red dark:border-white/20 dark:bg-white/5 dark:text-pyyellow">
+            18th - 20th June 2026
+        </div>
+        <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tight mb-6 leading-tight">
+            Python in the <br>
+            <span class="text-gradient">Lion City</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+            Join the premier gathering of Pythonistas in Southeast Asia. Innovation meets culture in the heart of
+            Singapore.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="#speakers"
+                class="group relative px-8 py-4 bg-sg-red text-white font-bold rounded-full overflow-hidden">
+                <span class="relative z-10 group-hover:text-white transition-colors duration-300">Submit Talk
+                    Proposal</span>
+                <div
+                    class="absolute inset-0 bg-sg-orchid transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-80">
+                </div>
+            </a>
+            <a href="#sponsors"
+                class="px-8 py-4 border border-gray-300 rounded-full font-medium hover:bg-gray-100 transition-colors dark:border-white/30 dark:hover:bg-white/10">
+                Become a Sponsor
+            </a>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-gray-500 dark:text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+    </div>
+</header>
+
+<!-- Call for Speakers -->
+<section id="speakers" class="py-24 relative overflow-hidden bg-white dark:bg-transparent">
+    <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-pyblue/10 rounded-full blur-[120px] -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-6 font-mono">Call for <span class="text-pyyellow">Speakers</span></h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                    We are looking for diverse voices and innovative ideas. Whether you're a seasoned expert or a
+                    first-time speaker, we want to hear from you. Share your knowledge on Python, AI, Data Science, Web
+                    Development, and more.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-sg-orchid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>20-minute Talks</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-sg-orchid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>90-minute Workshops</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-sg-orchid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span>5-minute Lightning Talks</span>
+                    </li>
+                </ul>
+                <a href="https://computing.sg/goto/pyconsg26cfp" target="_blank" rel="noopener noreferrer"
+                    class="bg-pyblue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-blue-900/50">
+                    Submit Your Proposal
+                </a>
+            </div>
+            <div class="relative">
+                <div class="glass-card p-8 rounded-2xl relative z-10">
+                    <div class="absolute -top-10 -right-10 text-9xl opacity-10 font-mono font-bold text-gray-900 dark:text-white">CFP</div>
+                    <h3 class="text-2xl font-bold mb-4">Important Dates</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4">
+                            <span class="text-gray-600 dark:text-gray-300">CFP Opens</span>
+                            <span class="font-mono text-pyyellow">1st Dec 2025</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4">
+                            <span class="text-gray-600 dark:text-gray-300">CFP Closes</span>
+                            <span class="font-mono text-pyyellow">1st May 2026</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-gray-300">Speakers Announced</span>
+                            <span class="font-mono text-pyyellow">15th May 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call for Sponsors -->
+<section id="sponsors" class="py-24 bg-gray-50 dark:bg-[#0f0f1a] relative">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-5xl font-bold mb-6 font-mono">Call for <span class="text-sg-red">Sponsors</span></h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Support the community and showcase your brand to hundreds of developers, data scientists, and tech leaders.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Gold -->
+            <div class="glass-card p-8 rounded-xl transition-colors border-t-4 border-pyyellow">
+                <h3 class="text-2xl font-bold mb-2 text-pyyellow">Gold</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">Premium visibility & branding</p>
+                <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+                    <li>• Large logo on placement</li>
+                    <li>• Talk slot</li>                    
+                    <li>• Booth space</li>
+                    <li>• 5 conference tickets</li>
+                    <li>• Monthly social media shoutouts</li>                    
+                </ul>
+            </div>
+            <!-- Platinum -->
+            <div
+                class="glass-card p-8 rounded-xl bg-gradient-to-b from-sg-orchid/10 to-transparent border-t-4 border-purple-400 transform scale-105 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-2 text-purple-400">Platinum</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">Maximum impact & exclusivity</p>
+                <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+                    <li>• Largest logo placement</li>
+                    <li>• Workshop/Talk slot</li>                    
+                    <li>• Double booth space</li>
+                    <li>• 10 conference tickets</li>
+                    <li>• Weekly social media shoutouts</li>                     
+                </ul>
+            </div>
+            <!-- Silver -->
+            <div class="glass-card p-8 rounded-xl transition-colors border-t-4 border-gray-400">
+                <h3 class="text-2xl font-bold mb-2 text-gray-400">Silver</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">Great community support</p>
+                <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+                    <li>• Standard logo placement</li>
+                    <li>• Talk slot</li> 
+                    <li>• Booth space</li>
+                    <li>• 2 conference tickets</li>
+                    <li>• Bi-monthly social media shoutouts</li>                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-sg-orchid/20 to-sg-red/20 p-1 rounded-2xl inline-block">
+            <div class="bg-white dark:bg-[#0f0f1a] rounded-xl p-8 md:p-12">
+                <h3 class="text-2xl font-bold mb-4">Ready to support us?</h3>
+                <p class="mb-8 text-gray-600 dark:text-gray-300">Download our detailed sponsorship prospectus to learn more about the
+                    packages and benefits.</p>
+                <a href="./assets/sponsorship-prospectus.pdf"
+                    class="bg-sg-red text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-colors flex items-center mx-auto space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    <span>Download Sponsorship Prospectus</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
