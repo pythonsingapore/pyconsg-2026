@@ -16,10 +16,13 @@ for page in PAGES:
         continue
         
     print(f"Working on {page}")
+    
+    footer_file = 'footer_edusummit.html' if page == 'edusummit.html' else 'footer.html'
+    
     with open('header.html', 'r', encoding='utf-8') as header, \
             open('navbar.html', 'r', encoding='utf-8') as navbar, \
             open(page, 'r', encoding='utf-8') as content, \
-            open('footer.html', 'r', encoding='utf-8') as footer, \
+            open(footer_file, 'r', encoding='utf-8') as footer, \
             open(f"../{page}", "w", encoding='utf-8') as output:
         output.write(header.read())
         output.write(navbar.read())
