@@ -26,12 +26,8 @@ def optimize_image(input_path, output_path, max_size=(400, 400)):
 
 # Define paths
 assets_dir = 'assets'
-loh_input = os.path.join(assets_dir, 'loh-kar-wei.jfif')
-loh_output = os.path.join(assets_dir, 'loh-kar-wei.png')
-
-william_input = os.path.join(assets_dir, 'william-hooi.png')
-william_output = os.path.join(assets_dir, 'william-hooi.png') # Overwrite with optimized version
+yiyuan_input = os.path.join(assets_dir, 'yiyuan-li.jfif')
+yiyuan_output = os.path.join(assets_dir, 'yiyuan-li.png')
 
 # Process images
-optimize_image(loh_input, loh_output)
-optimize_image(william_input, william_output)
+optimize_image(yiyuan_input, yiyuan_output)
