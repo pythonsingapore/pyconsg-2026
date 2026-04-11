@@ -26,7 +26,7 @@ def optimize_image(input_path, output_path, max_size=(400, 400)):
 
 # Define paths
 assets_dir = 'assets'
-yiyuan_input = os.path.join(assets_dir, 'yiyuan-li.jfif')
+yiyuan_input = os.path.join(assets_dir, 'yiyuan-li.png')
 yiyuan_output = os.path.join(assets_dir, 'yiyuan-li.png')
 
 # Process images
