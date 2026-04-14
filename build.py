@@ -2,7 +2,7 @@
 import os
 
 # List of Pages to rebuild
-PAGES = ['index.html', 'archive.html', 'sponsor.html', 'team.html', 'edusummit.html', 'speakers.html', 'accepted-cfps.html', 'coc.html', 'about.html', 'schedule.html', 'directions.html', 'food.html']
+PAGES = ['index.html', 'archive.html', 'sponsor.html', 'team.html', 'edusummit.html', 'speakers.html', 'accepted-cfps.html', 'coc.html', 'about.html', 'schedule.html', 'directions.html', 'food.html', 'jobhack.html']
 
 print("Regenerating Pages...")
 
