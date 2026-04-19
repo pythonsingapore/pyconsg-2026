@@ -60,17 +60,18 @@
 </head>
 
 <body class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white"><nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[auto,1fr,auto] items-center gap-4">
         <div class="flex items-center">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
                 PyCon Singapore 2026
             </a>
         </div>
-        <div class="hidden md:flex space-x-8 font-medium">
-            <a href="index.html#speakers" class="hover:text-sg-red transition-colors">Speakers</a>
-            <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
-            <a href="#" class="hover:text-sg-red transition-colors">Venue</a>
-            <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="hover:text-sg-red transition-colors">Archive</a>
+        <div class="hidden md:flex justify-center flex-nowrap gap-8 font-medium">
+            <a href="coc.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Code of Conduct</a>
+            <a href="index.html#speakers" class="whitespace-nowrap hover:text-sg-red transition-colors">Speakers</a>
+            <a href="index.html#sponsors" class="whitespace-nowrap hover:text-sg-red transition-colors">Sponsors</a>
+            <a href="#" class="whitespace-nowrap hover:text-sg-red transition-colors">Venue</a>
+            <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap hover:text-sg-red transition-colors">Archive</a>
         </div>
         <button id="theme-toggle" class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
     </div>
@@ -133,17 +134,20 @@
 	<section id="speakers" class="py-20 bg-white dark:bg-[#0a0a14]">
 		<div class="max-w-7xl mx-auto px-6">
 			<h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">
-				Featured Speakers
+				Featured New Speakers for 2026
 			</h2>
             
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-				<!-- Speaker Card: Yusufbek Abdurakhimov -->
+				<!-- Speaker Card: Cheuk Ting Ho -->
 				<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
 					<div class="flex items-center mb-4">
-						<img src="assets/yusufbek.png" alt="Yusufbek Abdurakhimov" class="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-white/10">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+							<img src="assets/cheuktingho.png" alt="Cheuk Ting Ho" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">CT</div>
+						</div>
 						<div class="ml-4">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Yusufbek Abdurakhimov</h3>
-							<a href="https://www.linkedin.com/in/ayusufbek/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Cheuk Ting Ho</h3>
+							<a href="https://www.linkedin.com/in/cheukting-ho/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
 								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
 									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 								</svg>
@@ -152,14 +156,31 @@
 						</div>
 					</div>
 					<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
-						My Python Learning Journey: From Beginner to Builder
+						Python Software Foundation Education &amp; Outreach Work Group
 					</h4>
 					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-						Discover the challenges, triumphs, and key takeaways from a personal journey into the world of Python programming. A session filled with actionable insights for learners and educators alike.
+						The Python Software Foundation (PSF) Education &amp; Outreach Workgroup's (EOW) purpose is to support the Python Software Foundation's mission to promote the Python programming language, especially in supporting and enhancing the education of Python..
 					</p>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                        <span class="font-bold">About:</span> Yusufbek is the current NOI Uzbekistan Champion and also its National Team Captain in AI & Cybersecurity. He is also the founder of Neuro League. At 17, he is building AI platforms, global olympiads, and educational systems that connect innovation with real-world impact. His journey is driven by curiosity, discipline, and the ambition to redefine what is possible.
-                    </p>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-2">
+						The EOW's goals include:
+					</p>
+					<ul class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-2 mb-4">
+						<li>Advise the board regarding the PSF's educational outreach, research and strategy</li>
+						<li>Consolidate and provide resources to support educators and local community leaders</li>
+						<li>Seek and receive feedback regarding gaps in PSF education resources, and advise the Board on the curation or support of resources to address the feedback</li>
+						<li>Support education and outreach for PyCon US:
+							<ul class="list-disc pl-5 mt-2 space-y-2">
+								<li>Connect with local high schools and invite them to participate</li>
+								<li>Support facilitation of education summit</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						<span class="font-bold">About:</span> After having a career as a Data Scientist and Developer Advocate, Cheuk dedicated her work to the open-source community. Currently, she is working as AI developer advocate for JetBrains. She has co-founded Humble Data, a beginner Python workshop that has been happening around the world. She has served the EuroPython Society board for two years and is now a fellow and director of the Python Software Foundation (PSF). She is also the PSF Education &amp; Outreach Work Group Lead.
+					</p>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+						More at <a href="https://cheuk.dev/about/" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors">https://cheuk.dev/about/</a>
+					</p>
 				</div>
 
 				<!-- Speaker Card: William Hooi -->
@@ -187,16 +208,16 @@
 					</p>
 				</div>
 
-				<!-- Speaker Card: Loh Kar Wei -->
+				<!-- Speaker Card: Rodelene Joy Leonorio -->
 				<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
 					<div class="flex items-center mb-4">
-						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-sg-red to-pyyellow flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
-							<img src="assets/loh-kar-wei.png" alt="Loh Kar Wei" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">KW</div>
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+							<img src="assets/joy.png" alt="Rodelene Joy Leonorio" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">RL</div>
 						</div>
 						<div class="ml-4">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Loh Kar Wei</h3>
-							<a href="https://www.linkedin.com/in/kar-wei-loh/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Rodelene Joy Leonorio</h3>
+							<a href="https://www.linkedin.com/in/rodelene-joy-leonorio/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
 								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
 									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 								</svg>
@@ -205,11 +226,39 @@
 						</div>
 					</div>
 					<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
-						K12 Cybersecurity Education Startup Founder and Advocate
+						Why Python Matters in Basic Education: Building Thinkers, Not Just Coders
 					</h4>
-					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-						<span class="font-bold">About:</span> Co-Founder of Hexcore Labs, a cybersecurity education startup focusing on gamified training. Kar Wei is a cybersecurity researcher who has discovered zero-day vulnerabilities and is actively involved with Cyber Youth Singapore and AiSP. She is dedicated to empowering the next generation of cyber defenders.
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						Across the past decade, education research has shifted from teaching code through strict syntax to building broad problem-solving skills. Python fits this shift well because it is clear, flexible, and beginner friendly. This session highlights global trends in computational thinking and explains why Python works as a foundation for K to 12 learners. It helps students focus on logic, structure, and creative problem solving, which strengthens digital literacy and prepares them for a tech-driven future.
 					</p>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+						<span class="font-bold">About:</span> Teacher Joy is a high school computing teacher currently pursuing her postgraduate studies at De La Salle University, The Philippines. She recently spoke at Python Asia 2026 and is continuing this important discussion to promote greater awareness of computing education for young learners.
+					</p>
+				</div>
+
+				<!-- Speaker Card: Yusufbek Abdurakhimov -->
+				<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+					<div class="flex items-center mb-4">
+						<img src="assets/yusufbek.png" alt="Yusufbek Abdurakhimov" class="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-white/10">
+						<div class="ml-4">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Yusufbek Abdurakhimov</h3>
+							<a href="https://www.linkedin.com/in/ayusufbek/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
+								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+								</svg>
+								LinkedIn Profile
+							</a>
+						</div>
+					</div>
+					<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+						My Python Learning Journey: From Beginner to Builder
+					</h4>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						Discover the challenges, triumphs, and key takeaways from a personal journey into the world of Python programming. A session filled with actionable insights for learners and educators alike.
+					</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        <span class="font-bold">About:</span> Yusufbek is the current NOI Uzbekistan Champion and also its National Team Captain in AI & Cybersecurity. He is also the founder of Neuro League. At 17, he is building AI platforms, global olympiads, and educational systems that connect innovation with real-world impact. His journey is driven by curiosity, discipline, and the ambition to redefine what is possible.
+                    </p>
 				</div>
 
 				<!-- Speaker Card: Yiyuan Li -->
@@ -239,17 +288,17 @@
 						<span class="font-bold">About:</span> Yiyuan is your non-typical middle-school dropout high-agency self-learner currently excelling at the gruelling 42 programme at SUTD. He treats computer science as a discipline, not just a career path.
 					</p>
 				</div>
-                
-				<!-- Speaker Card: Rodelene Joy Leonorio -->
+
+				<!-- Speaker Card: Loh Kar Wei -->
 				<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
 					<div class="flex items-center mb-4">
-						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
-							<img src="assets/joy.png" alt="Rodelene Joy Leonorio" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">RL</div>
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-sg-red to-pyyellow flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+							<img src="assets/loh-kar-wei.png" alt="Loh Kar Wei" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">KW</div>
 						</div>
 						<div class="ml-4">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Rodelene Joy Leonorio</h3>
-							<a href="https://www.linkedin.com/in/rodelene-joy-leonorio/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Loh Kar Wei</h3>
+							<a href="https://www.linkedin.com/in/kar-wei-loh/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-1">
 								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
 									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 								</svg>
@@ -258,25 +307,22 @@
 						</div>
 					</div>
 					<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
-						Why Python Matters in Basic Education: Building Thinkers, Not Just Coders
+						K12 Cybersecurity Education Startup Founder and Advocate
 					</h4>
-					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-						Across the past decade, education research has shifted from teaching code through strict syntax to building broad problem-solving skills. Python fits this shift well because it is clear, flexible, and beginner friendly. This session highlights global trends in computational thinking and explains why Python works as a foundation for K to 12 learners. It helps students focus on logic, structure, and creative problem solving, which strengthens digital literacy and prepares them for a tech-driven future.
-					</p>
 					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-						<span class="font-bold">About:</span> Teacher Joy is a high school computing teacher currently pursuing her postgraduate studies at De La Salle University, The Philippines. She recently spoke at Python Asia 2026 and is continuing this important discussion to promote greater awareness of computing education for young learners.
+						<span class="font-bold">About:</span> Co-Founder of Hexcore Labs, a cybersecurity education startup focusing on gamified training. Kar Wei is a cybersecurity researcher who has discovered zero-day vulnerabilities and is actively involved with Cyber Youth Singapore and AiSP. She is dedicated to empowering the next generation of cyber defenders.
 					</p>
 				</div>
                 
 				<!-- Placeholder Card -->
-				<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-dashed border-gray-300 dark:border-gray-700 min-h-[250px] opacity-75 hover:opacity-100 transition-opacity">
+				<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-dashed border-gray-300 dark:border-gray-700 min-h-[250px] opacity-75 hover:opacity-100 transition-opacity md:col-span-2 lg:col-span-3">
 					<div class="w-16 h-16 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center mb-4">
 						<svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 						</svg>
 					</div>
 					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">More Speakers</h3>
-					<p class="text-gray-500 dark:text-gray-400">Announcements coming soon</p>
+					<p class="text-gray-500 dark:text-gray-400">Look out for our exciting programme schedule! :)</p>
 				</div>
 		</div>
 	</section>
@@ -380,5 +426,25 @@
             hero.src = isDark ? sets[heroIndex].night : sets[heroIndex].day;
         }
         updateHero(initialDark);
+
+        const btn = document.getElementById('theme-toggle');
+        function render() {
+            if (!btn) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.innerHTML = isDark
+                ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><span class="ml-2">Dark</span>'
+                : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M8.05 8.05L6.636 6.636m10.728 0l-1.414 1.414M8.05 15.95l-1.414 1.414"/></svg><span class="ml-2">Light</span>';
+        }
+        render();
+        if (btn) {
+            btn.addEventListener('click', function() {
+                const nowDark = !document.documentElement.classList.contains('dark');
+                document.documentElement.classList.toggle('dark', nowDark);
+                localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+                render();
+                updateHero(nowDark);
+            });
+        }
     })();
 </script>
