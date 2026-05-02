@@ -60,7 +60,7 @@
 </head>
 
 <body class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white"><nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[auto,1fr,auto] items-center gap-4">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div class="flex items-center">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
                 PyCon Singapore 2026
@@ -73,9 +73,38 @@
             <a href="#" class="whitespace-nowrap hover:text-sg-red transition-colors">Venue</a>
             <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap hover:text-sg-red transition-colors">Archive</a>
         </div>
-        <button id="theme-toggle" class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
+            <button id="mobile-menu-btn" class="md:hidden flex items-center p-2 text-gray-900 dark:text-white hover:opacity-70 transition-opacity">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-[#0a0a14] border-t border-gray-200 dark:border-white/10">
+        <div class="px-6 py-4 flex flex-col gap-4 font-medium">
+            <a href="coc.html" class="hover:text-sg-red transition-colors">Code of Conduct</a>
+            <a href="speakers.html" class="hover:text-sg-red transition-colors">Speakers</a>
+            <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
+            <a href="#" class="hover:text-sg-red transition-colors">Venue</a>
+            <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="hover:text-sg-red transition-colors">Archive</a>
+        </div>
     </div>
 </nav>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+
 	<!-- Hero Section -->
 	<header class="relative py-20 bg-gray-50 dark:bg-[#0f0f1a] overflow-hidden">
 		<div class="absolute inset-0 z-0 opacity-30">
