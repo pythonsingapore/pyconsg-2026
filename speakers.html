@@ -63,51 +63,59 @@
 
 <body
     class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white">
-    <nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center">
-            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
-                PyCon Singapore 2026
-            </a>
+    <nav
+        class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html"
+                    class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
+                    PyCon Singapore 2026
+                </a>
+            </div>
+            <div class="hidden md:flex justify-center flex-nowrap gap-8 font-medium">
+                <a href="coc.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Code of Conduct</a>
+                <a href="speakers.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Speakers</a>
+                <a href="index.html#sponsors" class="whitespace-nowrap hover:text-sg-red transition-colors">Sponsors</a>
+                <a href="#" class="whitespace-nowrap hover:text-sg-red transition-colors">Venue</a>
+                <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer"
+                    class="whitespace-nowrap hover:text-sg-red transition-colors">Archive</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle"
+                    class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex items-center p-2 text-gray-900 dark:text-white hover:opacity-70 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="hidden md:flex justify-center flex-nowrap gap-8 font-medium">
-            <a href="coc.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Code of Conduct</a>
-            <a href="speakers.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Speakers</a>
-            <a href="index.html#sponsors" class="whitespace-nowrap hover:text-sg-red transition-colors">Sponsors</a>
-            <a href="#" class="whitespace-nowrap hover:text-sg-red transition-colors">Venue</a>
-            <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap hover:text-sg-red transition-colors">Archive</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-[#0a0a14] border-t border-gray-200 dark:border-white/10">
+            <div class="px-6 py-4 flex flex-col gap-4 font-medium">
+                <a href="coc.html" class="hover:text-sg-red transition-colors">Code of Conduct</a>
+                <a href="speakers.html" class="hover:text-sg-red transition-colors">Speakers</a>
+                <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
+                <a href="#" class="hover:text-sg-red transition-colors">Venue</a>
+                <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-sg-red transition-colors">Archive</a>
+            </div>
         </div>
-        <div class="flex items-center gap-4">
-            <button id="theme-toggle" class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
-            <button id="mobile-menu-btn" class="md:hidden flex items-center p-2 text-gray-900 dark:text-white hover:opacity-70 transition-opacity">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-[#0a0a14] border-t border-gray-200 dark:border-white/10">
-        <div class="px-6 py-4 flex flex-col gap-4 font-medium">
-            <a href="coc.html" class="hover:text-sg-red transition-colors">Code of Conduct</a>
-            <a href="speakers.html" class="hover:text-sg-red transition-colors">Speakers</a>
-            <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
-            <a href="#" class="hover:text-sg-red transition-colors">Venue</a>
-            <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer" class="hover:text-sg-red transition-colors">Archive</a>
-        </div>
-    </div>
-</nav>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-    });
-</script>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
     <!-- Speakers Section -->
     <section id="speakers" class="py-20 bg-white dark:bg-[#0a0a14]">
         <div class="max-w-7xl mx-auto px-6">
@@ -715,8 +723,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Jiawei Lin</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Software Engineer - CPF
-                                Board</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Software Engineer</p>
                             <a href="https://www.linkedin.com/in/jiaweilin/" target="_blank" rel="noopener noreferrer"
                                 class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
                                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
@@ -763,7 +770,8 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Thu Ya Kyaw</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Developer Relations Engineer - Google</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Developer Relations Engineer
+                                - Google</p>
                             <a href="https://www.linkedin.com/in/thuyakyaw/" target="_blank" rel="noopener noreferrer"
                                 class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
                                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
@@ -778,7 +786,11 @@
                         AI Kopitiam: Building Graph Workflow Agents with ADK
                     </h4>
                     <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-                        Ever wondered how to make an AI flawlessly understand a "Kopi O Kosong Peng" order? Step into the AI Kopitiam! In this hands-on workshop, you’ll learn how to use the Agent Development Kit (ADK) to build stateful, reliable, graph-based AI agents. Say goodbye to unpredictable chat loops and learn how to structure complex AI workflows while building your very own virtual Kopitiam assistant.
+                        Ever wondered how to make an AI flawlessly understand a "Kopi O Kosong Peng" order? Step into
+                        the AI Kopitiam! In this hands-on workshop, you’ll learn how to use the Agent Development Kit
+                        (ADK) to build stateful, reliable, graph-based AI agents. Say goodbye to unpredictable chat
+                        loops and learn how to structure complex AI workflows while building your very own virtual
+                        Kopitiam assistant.
                     </p>
                 </div>
 
@@ -1000,44 +1012,44 @@
     </footer>
 
     <script>
-            (function () {
-                const stored = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const initialDark = stored ? stored === 'dark' : prefersDark;
-                document.documentElement.classList.toggle('dark', initialDark);
-                const hero = document.getElementById('hero-image');
-                const sets = [
-                    { day: 'assets/marinabaysandsday.jpeg', night: 'assets/marinabaysandsnight.jpeg' },
-                    { day: 'assets/gardensbythebayday.jpeg', night: 'assets/gardensbythebaynight.jpeg' },
-                    { day: 'assets/changijewelday.jpeg', night: 'assets/changijewelnight.jpeg' }
-                ];
-                const heroIndex = Math.floor(Math.random() * sets.length);
-                function updateHero(isDark) {
-                    if (!hero) return;
-                    hero.src = isDark ? sets[heroIndex].night : sets[heroIndex].day;
-                }
-                updateHero(initialDark);
+        (function () {
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialDark = stored ? stored === 'dark' : prefersDark;
+            document.documentElement.classList.toggle('dark', initialDark);
+            const hero = document.getElementById('hero-image');
+            const sets = [
+                { day: 'assets/marinabaysandsday.jpeg', night: 'assets/marinabaysandsnight.jpeg' },
+                { day: 'assets/gardensbythebayday.jpeg', night: 'assets/gardensbythebaynight.jpeg' },
+                { day: 'assets/changijewelday.jpeg', night: 'assets/changijewelnight.jpeg' }
+            ];
+            const heroIndex = Math.floor(Math.random() * sets.length);
+            function updateHero(isDark) {
+                if (!hero) return;
+                hero.src = isDark ? sets[heroIndex].night : sets[heroIndex].day;
+            }
+            updateHero(initialDark);
 
-                const btn = document.getElementById('theme-toggle');
-                function render() {
-                    if (!btn) return;
-                    const isDark = document.documentElement.classList.contains('dark');
-                    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-                    btn.innerHTML = isDark
-                        ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><span class="ml-2">Dark</span>'
-                        : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M8.05 8.05L6.636 6.636m10.728 0l-1.414 1.414M8.05 15.95l-1.414 1.414"/></svg><span class="ml-2">Light</span>';
-                }
-                render();
-                if (btn) {
-                    btn.addEventListener('click', function () {
-                        const nowDark = !document.documentElement.classList.contains('dark');
-                        document.documentElement.classList.toggle('dark', nowDark);
-                        localStorage.setItem('theme', nowDark ? 'dark' : 'light');
-                        render();
-                        updateHero(nowDark);
-                    });
-                }
-            })();
+            const btn = document.getElementById('theme-toggle');
+            function render() {
+                if (!btn) return;
+                const isDark = document.documentElement.classList.contains('dark');
+                btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.innerHTML = isDark
+                    ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><span class="ml-2">Dark</span>'
+                    : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M8.05 8.05L6.636 6.636m10.728 0l-1.414 1.414M8.05 15.95l-1.414 1.414"/></svg><span class="ml-2">Light</span>';
+            }
+            render();
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    const nowDark = !document.documentElement.classList.contains('dark');
+                    document.documentElement.classList.toggle('dark', nowDark);
+                    localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+                    render();
+                    updateHero(nowDark);
+                });
+            }
+        })();
     </script>
 
 </body>
