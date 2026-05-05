@@ -25,7 +25,21 @@
                         pyyellow: '#FFD43B',
                         'sg-orchid': '#9932CC',
                         'sg-red': '#EF3340',
-                    }
+                    },
+                    keyframes: {
+                        'scroll-left': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        'scroll-right': {
+                            '0%': { transform: 'translateX(-50%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'scroll-left': 'scroll-left 45s linear infinite',
+                        'scroll-right': 'scroll-right 45s linear infinite',
+                    },
                 }
             }
         }
@@ -59,7 +73,8 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white"><nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white">
+<nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div class="flex items-center">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
@@ -104,7 +119,6 @@
         }
     });
 </script>
-
 <section class="py-24 relative">
     <div class="max-w-4xl mx-auto px-6">
         <h1 class="text-5xl font-bold mb-12 font-mono text-center text-gray-900 dark:text-white">Code of <span class="text-pyyellow">Conduct</span>
