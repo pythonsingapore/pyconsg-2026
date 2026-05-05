@@ -70,6 +70,14 @@
         .dark .hero-overlay {
             background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 1));
         }
+
+        @media (min-width: 768px) {
+            .speakers-page .glass-card {
+                height: 28rem;
+                overflow-y: auto;
+                overscroll-behavior: contain;
+            }
+        }
     </style>
 </head>
 
@@ -120,7 +128,7 @@
     });
 </script>
 <!-- Speakers Section -->
-<section id="speakers" class="py-20 bg-white dark:bg-[#0a0a14]">
+<section id="speakers" class="speakers-page py-20 bg-white dark:bg-[#0a0a14]">
 	<div class="max-w-7xl mx-auto px-6">
 
 		<!-- Keynote Speakers -->
