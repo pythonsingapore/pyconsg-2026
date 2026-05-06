@@ -534,6 +534,64 @@
 					As LLM-powered agents move from simple chat interfaces to complex autonomous systems, developers face a recurring challenge: the "Monolithic Prompt." Cramming every tool, instruction, and piece of documentation into a system prompt leads to high latency, increased costs, and "context lost in the middle." In this session, we explore Agent Skills, an open standard and Python library designed to modularize agent capabilities. We will dive into the architecture of a "Skill"—a structured bundle of Markdown instructions, Python scripts, and reference data—and demonstrate how agents can dynamically discover and load these skills only when needed. You will also learn about how Agent Plugins for AWS equip AI coding agents with the skills to help you architect, deploy, and operate on AWS. Agent plugins for AWS are currently supported by Claude Code, Codex, and Cursor.
 				</p>
 			</div>
+
+			<!-- Speaker Card: Aryn Choong Yue Lin -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+						<img src="assets/talk-speakers/arynchoong.png" alt="Aryn Choong Yue Lin" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">AC</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">Aryn Choong Yue Lin</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Engineer, MVP Studio at NUS Enterprise</p>
+						<a href="https://www.linkedin.com/in/ychoong/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					From Audio to Ecology: A BirdNET Pipeline for Bird Monitoring in Singapore
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					This project uses passive acoustic recordings from sites across Singapore and the BirdNET deep-learning model to detect bird species and track their calling activity over time. After filtering BirdNET outputs to improve reliability, the study estimates species richness, community composition, and diel activity patterns, compares these across different habitat types, and links variation in detections to environmental factors such as vegetation cover, road proximity, and weather.
+				</p>
+			</div>
+
+			<!-- Speaker Card: Ray Goh -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+						<img src="assets/talk-speakers/ray-goh.png" alt="Ray Goh" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">RG</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">Ray Goh</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Leader in Finance, Investment &amp; Trading Technology, DBS Bank</p>
+						<a href="https://www.linkedin.com/in/therayg/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Property-Based Testing with AI: Using Hypothesis to Find Bugs in Your Production Code
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					Your unit tests pass. Your CI is green. But your production code still has bugs — and they’re hiding in edge cases you never thought to test.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					This talk demonstrates a complete, end-to-end workflow for finding real bugs in enterprise Python codebases using AI-augmented property-based testing. We’ll use Claude Code and Claude Opus to do the heavy lifting at every stage: reading and reasoning about your code, extracting meaningful testable properties, writing Hypothesis-powered tests, executing them autonomously, and triaging failures to distinguish genuine bugs from false positives. Valid bugs get fixed — automatically.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					The approach is grounded in a January 2026 Anthropic research study where an AI agent applied this exact workflow across 100+ popular Python packages, achieving 86% precision on top-ranked bug reports and discovering real defects in NumPy, AWS Lambda Powertools, and HuggingFace Tokenizers. This talk brings that research out of the lab and into your codebase.
+				</p>
+			</div>
 		</div>
 
 		<!-- Workshop Speakers -->
@@ -657,6 +715,39 @@
 				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 					For each acceleration tier we follow the same loop: theory → minimal working code → benchmark that confirms (or disproves) the theory. You’ll leave with a small benchmark harness you can reuse, plus a decision checklist for when SIMD is enough, when GPUs pay off, and when XLA/TPU is the right move.
 				</p>
+			</div>
+
+			<!-- Speaker Card: Cheong Yu Jia -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+						<img src="assets/workshop-speakers/cheongyujia.png" alt="Cheong Yu Jia" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">CJ</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">Cheong Yu Jia</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Software Consultant, Zenika Singapore</p>
+						<a href="https://www.linkedin.com/in/yujia21/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Efficient Python Testing: Leveraging Parametrization, Fixtures, Monkeypatching and Marks
+				</h4>
+				<ul class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-2 mb-4">
+					<li>Overview of basic testing principles - AAAC, TDD (5 mins)</li>
+					<li>Installation of pytest, environment setup (5 mins)</li>
+					<li>Writing a basic functionality and unit test (10 mins)</li>
+					<li>Parametrization - passing different data to the same test (10 mins)</li>
+					<li>Fixtures - reusing data across multiple tests (10 mins)</li>
+					<li>Monkeypatch and mocks - environmental variables, external interactions (10 mins)</li>
+					<li>Marks - autouse fixtures, skip (5 mins)</li>
+					<li>Conclusion (5 mins)</li>
+				</ul>
 			</div>
 		</div>
 
