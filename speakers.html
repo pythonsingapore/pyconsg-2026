@@ -592,6 +592,79 @@
 					The approach is grounded in a January 2026 Anthropic research study where an AI agent applied this exact workflow across 100+ popular Python packages, achieving 86% precision on top-ranked bug reports and discovering real defects in NumPy, AWS Lambda Powertools, and HuggingFace Tokenizers. This talk brings that research out of the lab and into your codebase.
 				</p>
 			</div>
+
+			<!-- Speaker Card: GyeongSeon Park -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+						<img src="assets/talk-speakers/gyeongseonpark.png" alt="GyeongSeon Park" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">GP</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">GyeongSeon Park</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Backend Software Engineer - Kakobank</p>
+						<a href="https://www.linkedin.com/in/gyeongseon-park/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Building a Flexible and Scalable Notification System
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					What happens when your notification job silently sends the same message twice — because someone forgot deduplication logic that gets copy-pasted into every new job?
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					Every notification type on my team used to require its own cron job, its own deploy, and its own prayer.<br>
+					I wanted a way out — and ended up building a time-driven notification system that sends 60,000–130,000 messages to ~30,000 users in about 8 minutes, using Python, PostgreSQL, and Airflow.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					The key idea: notification rules live in the schema, not the codebase.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					Each rule is just a row: a cron schedule, a SQL query to find "what happened", another SQL query to find "who cares", and a template ID. Arguments flow from one query to the next through <code>string.Template</code> substitution. Need a new notification type? Insert a row.<br>
+					No deploy, no PR, no waiting on engineers. Our ops team started adding their own notifications within a day.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					I'll walk through the architecture, show real code, and share what broke along the way. You should be able to steal this pattern for your own system.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					🔗 Article introducing this architecture - DevOps.dev Medium:<br>
+					<a href="https://medium.com/p/eef601f22518" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors">https://medium.com/p/eef601f22518</a>
+				</p>
+			</div>
+
+			<!-- Speaker Card: Edwin Ng -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+						<img src="assets/talk-speakers/placeholder.png" alt="Edwin Ng" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">EN</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">Edwin Ng</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Senior Consultant, AI - Zenika Singapore</p>
+						<a href="https://www.linkedin.com/in/nzedwin/" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+							</svg>
+							LinkedIn
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Stop training, start prompting: The future of dynamic video surveillance
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					For years, object detection in computer vision has been trapped within the rigid, expensive bottleneck of "closed-set" models, detecting only the specific objects they were explicitly trained on. When applied to video surveillance, this necessitates a costly and lengthy cycle of data collection, labelling, and retraining every time a new operational threat or business requirement emerges.
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					This session introduces a paradigm shift: Open-Vocabulary Video Intelligence. Leveraging the latest YOLOE-26 models, we move beyond fixed categories into a unified semantic space where the camera "understands" language. Attendees will see how to transform static surveillance into a dynamic, promptable engine that can detect "anything" using simple text or visual references using models "out of the box".
+				</p>
+			</div>
 		</div>
 
 		<!-- Workshop Speakers -->
@@ -747,6 +820,81 @@
 					<li>Monkeypatch and mocks - environmental variables, external interactions (10 mins)</li>
 					<li>Marks - autouse fixtures, skip (5 mins)</li>
 					<li>Conclusion (5 mins)</li>
+				</ul>
+			</div>
+
+			<!-- Speaker Card: PyLadies Singapore 101 -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10 p-2">
+						<img src="assets/pyladies.svg" alt="PyLadies Singapore" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">PL</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">PyLadies Singapore</h3>
+						<a href="https://pyladies.sg" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+							</svg>
+							Website
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Python 101
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					(Subject to Changes)<br>
+					Colab Notebook: <a href="https://colab.research.google.com/drive/1jNqaELZl79VDfkOELfWIe9_-cU6W6ILr?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors">here</a>
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					Beginner-friendly introduction to Python programming, including:
+				</p>
+				<ul class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-2 mb-4">
+					<li>Input / Output</li>
+					<li>Variables &amp; Data Types</li>
+					<li>Operators</li>
+					<li>Conditionals</li>
+					<li>For &amp; While Loops</li>
+					<li>Random Library</li>
+					<li>Defining Functions</li>
+					<li>Built-in Functions for Strings &amp; Lists</li>
+				</ul>
+			</div>
+
+			<!-- Speaker Card: PyLadies Singapore 102 -->
+			<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+				<div class="flex items-center mb-4">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10 p-2">
+						<img src="assets/pyladies.svg" alt="PyLadies Singapore" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+						<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">PL</div>
+					</div>
+					<div class="ml-4">
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">PyLadies Singapore</h3>
+						<a href="https://pyladies.sg" target="_blank" rel="noopener noreferrer" class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+							<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+							</svg>
+							Website
+						</a>
+					</div>
+				</div>
+				<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+					Python 102
+				</h4>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					(Subject to Changes)<br>
+					Colab Notebook: <a href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors">here</a>
+				</p>
+				<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+					Beginner-to-intermediate introduction to Python programming, including:
+				</p>
+				<ul class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-2 mb-4">
+					<li>Python 101 Recap (crash course on input/output, conditionals, loops)</li>
+					<li>Basic Algorithms (e.g. searching &amp; sorting)</li>
+					<li>File Reading (txt, csv files)</li>
+					<li>Intro to Data Science Libraries (numpy, matplotlib, pandas)</li>
+					<li>Group Activity: Developing an app with real data sets</li>
 				</ul>
 			</div>
 		</div>
