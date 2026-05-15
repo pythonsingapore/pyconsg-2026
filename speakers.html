@@ -97,7 +97,7 @@
 			<div class="hidden md:flex justify-center flex-nowrap gap-8 font-medium">
 				<a href="coc.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Code of Conduct</a>
 				<a href="speakers.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Speakers</a>
-                <a href="schedule.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Schedule</a>
+				<a href="schedule.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Schedule</a>
 				<a href="index.html#sponsors" class="whitespace-nowrap hover:text-sg-red transition-colors">Sponsors</a>
 				<a href="#" class="whitespace-nowrap hover:text-sg-red transition-colors">Venue</a>
 				<a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer"
@@ -121,7 +121,7 @@
 			<div class="px-6 py-4 flex flex-col gap-4 font-medium">
 				<a href="coc.html" class="hover:text-sg-red transition-colors">Code of Conduct</a>
 				<a href="speakers.html" class="hover:text-sg-red transition-colors">Speakers</a>
-                <a href="schedule.html" class="hover:text-sg-red transition-colors">Schedule</a>
+				<a href="schedule.html" class="hover:text-sg-red transition-colors">Schedule</a>
 				<a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
 				<a href="#" class="hover:text-sg-red transition-colors">Venue</a>
 				<a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer"
@@ -933,7 +933,7 @@
 					<div class="flex items-center mb-4">
 						<div
 							class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
-							<img src="assets/talk-speakers/placeholder.png" alt="Edwin Ng"
+							<img src="assets/talk-speakers/edwinng.png" alt="Edwin Ng"
 								class="w-full h-full object-cover"
 								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
 							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">
@@ -985,7 +985,8 @@
 						</div>
 						<div class="ml-4">
 							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Mou Yuan Yap</h3>
-							<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Machine Learning Engineer - Grab</p>
+							<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Machine Learning Engineer - Grab
+							</p>
 							<a href="https://www.linkedin.com/in/mouyuanyap/" target="_blank" rel="noopener noreferrer"
 								class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
 								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
@@ -1000,13 +1001,23 @@
 						Adopting uv and pyproject.toml for mono-repo: Challenges and Approach.
 					</h4>
 					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-						Managing Python dependencies across a large ML pipeline mono-repo is notoriously painful. Every job environment was baked into an opaque Docker image maintained in a separate repository — requiring cross-repo pull requests, manual image tag updates, and zero local reproducibility. Teams had no lockfiles, no standardization, and little visibility into what was actually running in production.
+						Managing Python dependencies across a large ML pipeline mono-repo is notoriously painful. Every
+						job environment was baked into an opaque Docker image maintained in a separate repository —
+						requiring cross-repo pull requests, manual image tag updates, and zero local reproducibility.
+						Teams had no lockfiles, no standardization, and little visibility into what was actually running
+						in production.
 					</p>
 					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-						This talk walks through the real-world journey of adopting pyproject.toml and uv across a large ML pipeline mono-repo. We'll cover the structural pattern that makes per-job isolation clean in a mono-repo, how a curated golden base image matrix tames CUDA and ML framework compatibility, and how a platform-hosted constraint file eliminates silent version drift after platform upgrades — all without requiring teams to coordinate manually.
+						This talk walks through the real-world journey of adopting pyproject.toml and uv across a large
+						ML pipeline mono-repo. We'll cover the structural pattern that makes per-job isolation clean in
+						a mono-repo, how a curated golden base image matrix tames CUDA and ML framework compatibility,
+						and how a platform-hosted constraint file eliminates silent version drift after platform
+						upgrades — all without requiring teams to coordinate manually.
 					</p>
 					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-						You'll leave with a concrete recipe for adopting uv and pyproject.toml in your own mono-repo, an honest account of the friction points, and a clear picture of how the pieces fit together from local dev through to production CI.
+						You'll leave with a concrete recipe for adopting uv and pyproject.toml in your own mono-repo, an
+						honest account of the friction points, and a clear picture of how the pieces fit together from
+						local dev through to production CI.
 					</p>
 				</div>
 			</div>
