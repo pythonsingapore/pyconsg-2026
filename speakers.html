@@ -969,6 +969,44 @@
 						using models "out of the box".
 					</p>
 				</div>
+
+				<!-- Speaker Card: Mou Yuan Yap -->
+				<div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+					<div class="flex items-center mb-4">
+						<div
+							class="w-16 h-16 rounded-full bg-gradient-to-br from-pyblue to-sg-orchid flex items-center justify-center overflow-hidden shadow-lg border-2 border-white dark:border-white/10">
+							<img src="assets/talk-speakers/mouyuanyap.png" alt="Mou Yuan Yap"
+								class="w-full h-full object-cover"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+							<div class="hidden w-full h-full items-center justify-center text-xl font-bold text-white">
+								MY</div>
+						</div>
+						<div class="ml-4">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white">Mou Yuan Yap</h3>
+							<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Machine Learning Engineer - Grab</p>
+							<a href="https://www.linkedin.com/in/mouyuanyap/" target="_blank" rel="noopener noreferrer"
+								class="text-sm text-sg-orchid hover:text-sg-red transition-colors flex items-center mt-2">
+								<svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+									<path
+										d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+								</svg>
+								LinkedIn
+							</a>
+						</div>
+					</div>
+					<h4 class="text-lg font-semibold text-pyblue dark:text-pyyellow mb-3">
+						Adopting uv and pyproject.toml for mono-repo: Challenges and Approach.
+					</h4>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						Managing Python dependencies across a large ML pipeline mono-repo is notoriously painful. Every job environment was baked into an opaque Docker image maintained in a separate repository — requiring cross-repo pull requests, manual image tag updates, and zero local reproducibility. Teams had no lockfiles, no standardization, and little visibility into what was actually running in production.
+					</p>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						This talk walks through the real-world journey of adopting pyproject.toml and uv across a large ML pipeline mono-repo. We'll cover the structural pattern that makes per-job isolation clean in a mono-repo, how a curated golden base image matrix tames CUDA and ML framework compatibility, and how a platform-hosted constraint file eliminates silent version drift after platform upgrades — all without requiring teams to coordinate manually.
+					</p>
+					<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+						You'll leave with a concrete recipe for adopting uv and pyproject.toml in your own mono-repo, an honest account of the friction points, and a clear picture of how the pieces fit together from local dev through to production CI.
+					</p>
+				</div>
 			</div>
 
 			<!-- Workshop Speakers -->
