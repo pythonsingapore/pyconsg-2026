@@ -1,74 +1,57 @@
-    <section id="schedule" class="py-20 bg-white dark:bg-[#0a0a14]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Programme</p>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">PyCon SG 2026
+ <section class="py-20 bg-white dark:bg-[#0a0a14]" id="schedule">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Programme</p>
+<h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">PyCon SG 2026
                     Schedule</h1>
-                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
+<p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
                     19th - 21st June 2026
                 </p>
-            </div>
-
-            <div x-data="{ tab: 'day1' }">
-                <div class="flex justify-center mb-8 space-x-4">
-                    <button @click="tab = 'day1'"
-                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day1', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day1' }"
-                        class="px-6 py-2 rounded-full font-semibold transition-all">Day 1</button>
-                    <button @click="tab = 'day2'"
-                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2' }"
-                        class="px-6 py-2 rounded-full font-semibold transition-all">Day 2</button>
-                    <button @click="tab = 'day2_pyladies'"
-                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2_pyladies', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2_pyladies' }"
-                        class="px-6 py-2 rounded-full font-semibold transition-all">Day 2 (PyLadies Track)</button>
-                    <button @click="tab = 'day3'"
-                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day3', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day3' }"
-                        class="px-6 py-2 rounded-full font-semibold transition-all">Day 3 (Workshops)</button>
-                </div>
-
-                <!-- Day 1 -->
-                <div x-show="tab === 'day1'" class="glass-card rounded-3xl overflow-hidden">
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px] text-left">
-                            <thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
-                                <tr>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6">
+</div>
+<div x-data="{ tab: 'day1' }">
+<div class="flex justify-center mb-8 space-x-4">
+<button :class="{ 'bg-pyblue text-white shadow-md': tab === 'day1', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day1' }" @click="tab = 'day1'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 1</button>
+<button :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2' }" @click="tab = 'day2'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 2</button>
+<button :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2_pyladies', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2_pyladies' }" @click="tab = 'day2_pyladies'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 2 (PyLadies Track)</button>
+<button :class="{ 'bg-pyblue text-white shadow-md': tab === 'day3', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day3' }" @click="tab = 'day3'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 3 (Workshops)</button>
+</div>
+<!-- Day 1 -->
+<div class="glass-card rounded-3xl overflow-hidden" x-show="tab === 'day1'">
+<div class="overflow-x-auto">
+<table class="w-full text-left block md:table w-full">
+<thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 hidden md:table-header-group">
+<tr>
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6" scope="col">
                                         Time</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue A - Event Hall 1-1</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue B - Event Hall 1-2</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 dark:divide-white/10">
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10 block md:table-row-group">
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0815 - 0900</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Registration</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0900 - 0915</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Day 1 Opening Address</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0915 - 1000</td>
-                                    <td colspan="2" class="px-6 py-5 align-top">
-                                        <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 1: So
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
+<div class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">Venue: Event Hall 1-1 + Event Hall 1-2</div>
+<div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 1: So
                                             Kiasu, Still Kena Replaced by AI?</div>
-                                        <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Director
+<div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Director
                                             / Vice Chair - Python Software Foundation, Georgi Ker</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed ">Many
+<p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Many
                                             of us in Asia grew up with the same advice: study hard, choose the right
                                             path, and your
                                             future will be secure. We did everything right. Extra tuition. Good grades.
@@ -88,39 +71,36 @@
                                             means to stay relevant in an AI-shaped world, and why the future may belong
                                             not to those who
                                             study once, but to those who keep learning together.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1000 - 1045</td>
-                                    <td colspan="2" class="px-6 py-5 align-top">
-                                        <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 2: Generative AI &amp; The Future of Python Developers</div>
-                                        <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Senior
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
+<div class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">Venue: Event Hall 1-1 + Event Hall 1-2</div>
+<div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 2: Generative AI &amp; The Future of Python Developers</div>
+<div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Senior
                                             Developer Relations Engineer - Google, Thu Ya Kyaw</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed ">AI is the hottest topic in tech right now, and Python is the undisputed language driving it. What does this mean for you? To stay ahead of the curve, we must move past "vibe coding" and building simple chatbots. We need to look ahead and apply real engineering skills. This keynote explores the practical path forward: from understanding Pydantic for robust data validation to mastering agentic skills by leveraging LangChain and Agent Development Kits.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">AI is the hottest topic in tech right now, and Python is the undisputed language driving it. What does this mean for you? To stay ahead of the curve, we must move past "vibe coding" and building simple chatbots. We need to look ahead and apply real engineering skills. This keynote explores the practical path forward: from understanding Pydantic for robust data validation to mastering agentic skills by leveraging LangChain and Agent Development Kits.</p>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1045 - 1100</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
-                                        Phototaking & Setup for concurrent sessions</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
+                                        Phototaking &amp; Setup for concurrent sessions</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1100 - 1130</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">You Don’t Need an LLM
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">You Don&rsquo;t Need an LLM
                                             to Understand Your Data</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">AI
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">AI
                                             Software Developer - Cambridge University Press &amp; Assessment, Cyrus
                                             Mante</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
-                                            Language Models dominate today’s NLP conversations, but they are often the
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
+                                            Language Models dominate today&rsquo;s NLP conversations, but they are often the
                                             wrong tool for
                                             the first and most important question: what is my data actually about? When
                                             working with
@@ -130,16 +110,16 @@
                                             scalable, and interpretable
                                             way to uncover structure in large text collections. Rather than treating it
                                             as a relic of the
-                                            past, we will explore how modern topic modeling fits naturally into today’s
+                                            past, we will explore how modern topic modeling fits naturally into today&rsquo;s
                                             Python data stack
                                             and complements LLM-based systems.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Merlions, Agents &amp;
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Merlions, Agents &amp;
                                             Copilot: Trustworthy Python on Azure</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
                                             Engagement Lead ANZ &amp; Asia - Microsoft, Michelle Mei Ling Sandford</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Building real-world multiagent systems in Python doesn't have to be dry or
                                             mysterious! In this
                                             lively 30-minute session, you'll meet a cast of Singaporean-inspired Python
@@ -148,37 +128,36 @@
                                             See how GitHub Copilot
                                             can supercharge development, while practical trust patterns and Azure
                                             deployment ensure your
-                                            code stays friendly, robust, and observable, even when things don’t go as
+                                            code stays friendly, robust, and observable, even when things don&rsquo;t go as
                                             planned. Whether
                                             you're new to multiagent systems, exploring GitHub Copilot, or eager to
                                             represent Singapore in
                                             your code, you'll learn strategies for transparency and reliability that are
                                             as fun as they are
                                             practical.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1130 - 1200</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Designing Python APIs
-                                            for Data You Don’t Control</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Designing Python APIs
+                                            for Data You Don&rsquo;t Control</div>
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Developer Community Manager - Apify, Saurav Jain</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
-                                            web isn’t an API, but Python developers often treat it like one. This talk
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+                                            web isn&rsquo;t an API, but Python developers often treat it like one. This talk
                                             explores how to
                                             design Python interfaces for unstable data sources, focusing on schema
                                             evolution, defensive
                                             parsing, and protecting downstream users.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Tokenization in
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Tokenization in
                                             Transformers v5: Simpler, Clearer, and More Modular</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
                                             Learning Engineer - Hugging Face, Aritra Ray Gosthipaty</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Tokenization is one of the most critical but least understood parts of
                                             modern NLP systems. For
                                             years, tokenizers in transformers were treated as opaque artifacts tied to
@@ -189,9 +168,9 @@
                                             explicit, modular
                                             architectures, much like the PyTorch nn.Modules where structure is clearly
                                             separated from
-                                            learned vocabulary and merge rules. In this talk, we’ll demystify how
+                                            learned vocabulary and merge rules. In this talk, we&rsquo;ll demystify how
                                             tokenization actually
-                                            works in Transformers v5. We’ll walk through the tokenization pipeline,
+                                            works in Transformers v5. We&rsquo;ll walk through the tokenization pipeline,
                                             explain how the
                                             tokenizers Rust backend integrates with transformers, and show how the new
                                             class hierarchy
@@ -202,26 +181,23 @@
                                             and how to confidently work with tokenizers as first-class, configurable
                                             components rather than
                                             black boxes.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1200 - 1330</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5">
-                                        Lunch & Networking</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5 block md:table-cell w-full md:w-auto" colspan="2">
+                                        Lunch &amp; Networking</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1330 - 1400</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Inside CPython: How
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Inside CPython: How
                                             the Open Source Interpreter Really Works</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Associate
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Associate
                                             Software Engineer - Red Hat, Allen Yesudasan</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             CPython is the reference implementation of Python used by millions of
                                             developers, yet few
                                             understand what happens beneath the surface when a Python program runs. This
@@ -233,16 +209,16 @@
                                             management and reference counting work, and how core components like the
                                             Global Interpreter Lock
                                             influence performance. Attendees will gain a clearer mental model of
-                                            Python’s internals and
+                                            Python&rsquo;s internals and
                                             learn how this knowledge can improve debugging, performance tuning, and
                                             everyday development.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">From Audio to Ecology:
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">From Audio to Ecology:
                                             A BirdNET Pipeline for Bird Monitoring in Singapore</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Engineer,
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Engineer,
                                             MVP Studio at NUS Enterprise, Aryn Choong Yue Lin</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                             project uses passive acoustic recordings from sites across Singapore and the
                                             BirdNET
                                             deep-learning model to detect bird species and track their calling activity
@@ -254,18 +230,17 @@
                                             types, and links variation in detections to environmental factors such as
                                             vegetation cover, road
                                             proximity, and weather.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1400 - 1430</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Building Practical
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Building Practical
                                             HealthTech AI Systems with Python: Lessons from HealthPredictor.AI</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Founding
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Founding
                                             CTO, HealthPredictor.ai, Melvin Ng, RPh</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Building AI systems in practice is very different from tutorials and demos.
                                             Beyond models and
                                             datasets, engineers must navigate messy data, system design trade-offs, and
@@ -289,27 +264,27 @@
                                             additional Python-focused content and technical depth for the PyCon
                                             audience. Attendees will
                                             leave with practical insights they can apply to their own AI projects.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">How to Write Terrible
-                                            Python Code (And Why It Works… Until It Doesn’t)</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Software
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">How to Write Terrible
+                                            Python Code (And Why It Works&hellip; Until It Doesn&rsquo;t)</div>
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Software
                                             Architect - Python and Open Source - EPAM Systems, Vivek Keshore</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
                                             if we deliberately write the worst Python code possible? In this talk, I
                                             will intentionally
                                             write Python code full of classic anti-patterns, global state chaos, god
                                             functions, mutable
                                             default arguments, swallowed exceptions, over clever one liners, and
                                             inheritance abuse. Each
-                                            example "works", until it doesn’t. Through short live demos and interactive
+                                            example "works", until it doesn&rsquo;t. Through short live demos and interactive
                                             moments, I will
                                             unpack how these bad code impacts, how Python actually behaves, and how
                                             small decisions slowly
                                             turn into fragile systems. I will refactor each example into a simpler, more
                                             Pythonic version
                                             and discuss the thinking behind the change. This is not a talk about shaming
-                                            bad code. It’s a
+                                            bad code. It&rsquo;s a
                                             talk about recognizing human behavior in software design, developing better
                                             instincts, and
                                             learning to value boring &amp; readable Python over clever solutions.
@@ -317,27 +292,26 @@
                                             a sharper eye for problematic code, practical refactoring heuristics, and a
                                             renewed appreciation
                                             for clarity over complexity.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1430 - 1500</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Beyond the Weights:
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Beyond the Weights:
                                             Surviving Python's AI Supply Chain Minefield</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Red Team
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Red Team
                                             Lead, Security Assurance - Bytedance, Yuli Zhan</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
-                                            March 2026, attackers compromised Trivy — a security scanner trusted by
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
+                                            March 2026, attackers compromised Trivy &mdash; a security scanner trusted by
                                             thousands of CI/CD
-                                            pipelines — and used it to steal PyPI publishing tokens from LiteLLM, one of
+                                            pipelines &mdash; and used it to steal PyPI publishing tokens from LiteLLM, one of
                                             the most widely
                                             deployed AI gateways in the Python ecosystem. Within hours, poisoned package
                                             versions were live
                                             on PyPI, silently harvesting cloud credentials from every Python process on
                                             infected hosts. The
-                                            malicious code never needed to be imported — it ran on interpreter startup.
+                                            malicious code never needed to be imported &mdash; it ran on interpreter startup.
                                             This is the new
                                             shape of supply chain attacks in the AI era. The threat surface has expanded
                                             beyond
@@ -356,21 +330,20 @@
                                             open-source tooling. Attendees will leave with a concrete, layered defence
                                             strategy they can
                                             start implementing the same week.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1515 - 1545</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Beyond the System
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Beyond the System
                                             Prompt: Scaling AI Capabilities with Agent Skills</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Gen C
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Gen C
                                             Community Lead, Jiawei Lin</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">As
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">As
                                             LLM-powered agents move from simple chat interfaces to complex autonomous
                                             systems, developers
                                             face a recurring challenge: the "Monolithic Prompt." Cramming every tool,
@@ -380,9 +353,9 @@
                                             in the middle." In this session, we explore Agent Skills, an open standard
                                             and Python library
                                             designed to modularize agent capabilities. We will dive into the
-                                            architecture of a "Skill"—a
+                                            architecture of a "Skill"&mdash;a
                                             structured bundle of Markdown instructions, Python scripts, and reference
-                                            data—and demonstrate
+                                            data&mdash;and demonstrate
                                             how agents can dynamically discover and load these skills only when needed.
                                             You will also learn
                                             about how Agent Plugins for AWS equip AI coding agents with the skills to
@@ -390,28 +363,28 @@
                                             deploy, and operate on AWS. Agent plugins for AWS are currently supported by
                                             Claude Code, Codex,
                                             and Cursor.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Building a Flexible
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Building a Flexible
                                             and Scalable Notification System</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Backend
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Backend
                                             Software Engineer - Kakobank, GyeongSeon Park</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
-                                            happens when your notification job silently sends the same message twice —
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
+                                            happens when your notification job silently sends the same message twice &mdash;
                                             because someone
                                             forgot deduplication logic that gets copy-pasted into every new job?</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Every
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Every
                                             notification type on my team used to require its own cron job, its own
                                             deploy, and its own
                                             prayer.
-                                            I wanted a way out — and ended up building a time-driven notification system
+                                            I wanted a way out &mdash; and ended up building a time-driven notification system
                                             that sends
-                                            60,000–130,000 messages to ~30,000 users in about 8 minutes, using Python,
+                                            60,000&ndash;130,000 messages to ~30,000 users in about 8 minutes, using Python,
                                             PostgreSQL, and
                                             Airflow.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
                                             key idea: notification rules live in the schema, not the codebase.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Each
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Each
                                             rule is just a row: a cron schedule, a SQL query to find "what happened",
                                             another SQL query
                                             to find "who cares", and a template ID. Arguments flow from one query to the
@@ -420,118 +393,106 @@
                                             No deploy, no PR, no waiting on engineers. Our ops team started adding their
                                             own notifications
                                             within a day.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">I'll
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">I'll
                                             walk through the architecture, show real code, and share what broke along
                                             the way. You
                                             should be able to steal this pattern for your own system.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">🔗
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">🔗
                                             Article introducing this architecture - DevOps.dev Medium:
                                             https://medium.com/p/eef601f22518</p>
-
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1600 - 1630</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Adopting uv and
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Adopting uv and
                                             pyproject.toml for mono-repo: Challenges and Approach.</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
                                             Learning Engineer - Grab, Mou Yuan Yap</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Managing Python dependencies across a large ML pipeline mono-repo is
                                             notoriously painful. Every job environment was baked into an opaque Docker
-                                            image maintained in a separate repository — requiring cross-repo pull
+                                            image maintained in a separate repository &mdash; requiring cross-repo pull
                                             requests, manual image tag updates, and zero local reproducibility. Teams
                                             had no lockfiles, no standardization, and little visibility into what was
                                             actually running in production.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                             talk walks through the real-world journey of adopting pyproject.toml and uv
                                             across a large ML pipeline mono-repo. We'll cover the structural pattern
                                             that makes per-job isolation clean in a mono-repo, how a curated golden base
                                             image matrix tames CUDA and ML framework compatibility, and how a
                                             platform-hosted constraint file eliminates silent version drift after
-                                            platform upgrades — all without requiring teams to coordinate manually.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                            platform upgrades &mdash; all without requiring teams to coordinate manually.</p>
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             You'll leave with a concrete recipe for adopting uv and pyproject.toml in
                                             your own mono-repo, an honest account of the friction points, and a clear
                                             picture of how the pieces fit together from local dev through to production
                                             CI.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1630 - 1700</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Day 1 Closing Remarks</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Day 2 -->
-                <div x-show="tab === 'day2'" class="glass-card rounded-3xl overflow-hidden" style="display: none;">
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px] text-left">
-                            <thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
-                                <tr>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6">
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="glass-card rounded-3xl overflow-hidden" style="display: none;" x-show="tab === 'day2'">
+<div class="overflow-x-auto">
+<table class="w-full text-left block md:table w-full">
+<thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 hidden md:table-header-group">
+<tr>
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6" scope="col">
                                         Time</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue A - Event Hall 1-1</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue B - Event Hall 1-2</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 dark:divide-white/10">
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10 block md:table-row-group">
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0815 - 0900</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Registration</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0900 - 0915</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Day 2 Opening</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0915 - 1000</td>
-                                    <td colspan="2" class="px-6 py-5 align-top">
-                                        <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 3:
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
+<div class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">Venue: Event Hall 1-1 + Event Hall 1-2</div>
+<div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 3:
                                             Using Tools Without Being Used: The Four Stages of AI Fluency and What They
                                             Make Possible Together</div>
-                                        <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Professor
+<div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Professor
                                             @ NUS; Director Google-NUS Innovation and Research Center, Anthony Tung
                                         </div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed ">Most
+<p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Most
                                             conversations about AI at work stop at the copilot: the AI that sits beside
                                             you and speeds
                                             up what you already do. It is useful, but it is only the first stage of a
                                             much longer
-                                            progression — and professionals who settle there are quietly optimizing
+                                            progression &mdash; and professionals who settle there are quietly optimizing
                                             themselves into the
                                             category of work that AI will replace next. This talk offers a four-stage
-                                            model of AI fluency —
+                                            model of AI fluency &mdash;
                                             monolingual silos, AI bilingualism, AI trilingualism, and AI multilingualism
-                                            — and argues that
+                                            &mdash; and argues that
                                             the capacity to move between stages rests on a single habit of mind, stated
                                             at two levels. At
                                             the individual level, the habit is to use tools without being used by them.
@@ -547,7 +508,7 @@
                                             precondition for harmony without uniformity. Only the professional who has
                                             released the
                                             goal-grip can truly sit with a colleague's framing without trying to convert
-                                            it — letting the
+                                            it &mdash; letting the
                                             clinician's burden remain clinical and the accountant's burden remain
                                             financial while still
                                             holding them together. I will show how private-assistant culture quietly
@@ -555,9 +516,9 @@
                                             uniform AI-mediated voice across a team that masks the disappearance of real
                                             disciplinary
                                             difference. Drawing on my DeepConnect research, I will argue that shared
-                                            infrastructure — the
+                                            infrastructure &mdash; the
                                             kind that lets teams accumulate understanding over time rather than losing
-                                            it between meetings —
+                                            it between meetings &mdash;
                                             is what makes collective sensemaking scale without flattening, and I will
                                             locate this argument
                                             inside Singapore's AI-bilingual workforce agenda and the SkillsFuture
@@ -567,18 +528,17 @@
                                             those ruled by their tools, and those who, having stepped free of that rule,
                                             can finally connect
                                             through them.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1000 - 1030</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">SKILL.md is the SOP
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">SKILL.md is the SOP
                                             your AI agent never had</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Lecturer - NUS Computing, Yeo Wee Kiang</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Long
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Long
                                             prompts can look harmless at first. Over time, they can become hard to
                                             manage. This talk
                                             introduces SKILL.md as the standard operating procedure your AI agent never
@@ -590,13 +550,13 @@
                                             Python workflows with sklearn, LangGraph, and multi-agent systems without
                                             replacing code that
                                             should stay deterministic.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Orchestrating
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Orchestrating
                                             Distributed Cloud Infrastructure with Pulumi and pyInfra</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Consulting Engineer - MongoDB, Piti Champeethong</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
                                             the era of multi-cloud and distributed systems, managing infrastructure
                                             often involves a
                                             fragmented mess of YAML files and specialised Domain Specific Languages
@@ -611,38 +571,37 @@
                                             distributed cluster,
                                             handle complex dependencies, and manage it without leaving the Python
                                             ecosystem.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1030 - 1100</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Property-Based Testing
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Property-Based Testing
                                             with AI: Using Hypothesis to Find Bugs in Your Production Code</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Leader in Finance, Investment &amp; Trading Technology, DBS Bank, Ray Goh
                                         </div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Your
-                                            unit tests pass. Your CI is green. But your production code still has bugs —
-                                            and they’re
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Your
+                                            unit tests pass. Your CI is green. But your production code still has bugs &mdash;
+                                            and they&rsquo;re
                                             hiding in edge cases you never thought to test.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                             talk demonstrates a complete, end-to-end workflow for finding real bugs in
                                             enterprise
-                                            Python codebases using AI-augmented property-based testing. We’ll use Claude
+                                            Python codebases using AI-augmented property-based testing. We&rsquo;ll use Claude
                                             Code and Claude
                                             Opus to do the heavy lifting at every stage: reading and reasoning about
                                             your code, extracting
                                             meaningful testable properties, writing Hypothesis-powered tests, executing
                                             them autonomously,
                                             and triaging failures to distinguish genuine bugs from false positives.
-                                            Valid bugs get fixed —
+                                            Valid bugs get fixed &mdash;
                                             automatically.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
                                             approach is grounded in a January 2026 Anthropic research study where an AI
                                             agent applied
                                             this exact workflow across 100+ popular Python packages, achieving 86%
@@ -651,18 +610,17 @@
                                             and HuggingFace
                                             Tokenizers. This talk brings that research out of the lab and into your
                                             codebase.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1100 - 1130</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Stop training, start
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Stop training, start
                                             prompting: The future of dynamic video surveillance</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Consultant, AI - Zenika Singapore, Edwin Ng</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
                                             years, object detection in computer vision has been trapped within the
                                             rigid, expensive
                                             bottleneck of "closed-set" models, detecting only the specific objects they
@@ -672,7 +630,7 @@
                                             data collection, labelling, and retraining every time a new operational
                                             threat or business
                                             requirement emerges.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                             session introduces a paradigm shift: Open-Vocabulary Video Intelligence.
                                             Leveraging the
                                             latest YOLOE-26 models, we move beyond fixed categories into a unified
@@ -682,73 +640,61 @@
                                             dynamic, promptable engine that can detect "anything" using simple text or
                                             visual references
                                             using models "out of the box".</p>
-
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1130 - 1300</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5 block md:table-cell w-full md:w-auto" colspan="2">
                                         Lunch + Networking (ownself settle ownself) / PyLadies Lunch</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1300 - 1400</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Special Dialogue Session (SG Tech Community Leads)</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1400 - 1430</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Combined Talk Section</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1430 - 1500</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1500 - 1510</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5 block md:table-cell w-full md:w-auto" colspan="2">
                                         Break (remove partition)</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1510 - 1600</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Lightning Talks (8-10 slots)</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1600 - 1645</td>
-                                    <td colspan="2" class="px-6 py-5 align-top">
-                                        <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 4:
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
+<div class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">Venue: Event Hall 1-1 + Event Hall 1-2</div>
+<div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 4:
                                             From PyCon APAC to PythonAsia: Building Connections Across Communities</div>
-                                        <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Executive
+<div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Executive
                                             Director - Python Asia Organisation, Freilla Mae Espinola</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed ">- A
+<p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">- A
                                             simple introduction to the Python Asia Organization and what we are
                                             building.
                                             - How Python communities across Asia can connect and create more
@@ -756,193 +702,174 @@
                                             - My personal journey with Python and how the community has shaped my
                                             learning.
                                             - Our ongoing collaboration with PyCon SG.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1645 - 1700</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto" colspan="2">
                                         Prizes Draw + Day 2 Closing Remarks</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Day 2 PyLadies Track -->
-                <div x-show="tab === 'day2_pyladies'" class="glass-card rounded-3xl overflow-hidden"
-                    style="display: none;">
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px] text-left">
-                            <thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
-                                <tr>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Day 2 PyLadies Track -->
+<div class="glass-card rounded-3xl overflow-hidden" style="display: none;" x-show="tab === 'day2_pyladies'">
+<div class="overflow-x-auto">
+<table class="w-full text-left block md:table w-full">
+<thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 hidden md:table-header-group">
+<tr>
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300" scope="col">
                                         Time</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300" scope="col">
                                         Session</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 dark:divide-white/10">
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10 block md:table-row-group">
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0815 - 0900</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>
                                         Registration</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0900 - 0915</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">Day 2
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>Day 2
                                         Opening</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0915 - 1000</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-semibold text-gray-900 dark:text-white">Panel discussion</div>
-                                        <div class="text-gray-600 dark:text-gray-300 mt-1">From Shortcuts to Standards:
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>
+<div class="font-semibold text-gray-900 dark:text-white">Panel discussion</div>
+<div class="text-gray-600 dark:text-gray-300 mt-1">From Shortcuts to Standards:
                                             Agentic AI Across Industries</div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1000 - 1030</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">Carousel
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>Carousel
                                         group mentoring</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1030 - 1100</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">Talk
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>Talk
                                     </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1100 - 1140</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">Apify
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>Apify
                                         Web Scraping &amp; Parsing Workshop</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1140 - 1145</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">PyLadies
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>PyLadies
                                         Closing Note</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1145 - 1300</td>
-                                    <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white">PyLadies
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Session</div>PyLadies
                                         Networking Lunch</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Day 3 -->
-                <div x-show="tab === 'day3'" class="glass-card rounded-3xl overflow-hidden" style="display: none;">
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px] text-left">
-                            <thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
-                                <tr>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6">
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="glass-card rounded-3xl overflow-hidden" style="display: none;" x-show="tab === 'day3'">
+<div class="overflow-x-auto">
+<table class="w-full text-left block md:table w-full">
+<thead class="bg-gray-50/80 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 hidden md:table-header-group">
+<tr>
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-1/6" scope="col">
                                         Time</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue A - Event Hall 1-1</th>
-                                    <th scope="col"
-                                        class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12">
+<th class="px-6 py-5 text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 w-5/12" scope="col">
                                         Venue B - Event Hall 1-2</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 dark:divide-white/10">
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10 block md:table-row-group">
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         0900 - 1030</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 1: Python 101
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 1: Python 101
                                         </div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
                                             Singapore</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
-                                            (Subject to Changes)<br>
-                                            Colab Notebook: <a href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors underline">here</a>
-                                        </p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                            (Subject to Changes)<br/>
+                                            Colab Notebook: <a class="text-sg-orchid hover:text-sg-red transition-colors underline" href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing" rel="noopener noreferrer" target="_blank">here</a>
+</p>
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Beginner-to-intermediate introduction to Python programming, including:
                                         </p>
-                                        <ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
-                                            <li>Python 101 Recap (crash course on input/output, conditionals, loops)</li>
-                                            <li>Basic Algorithms (e.g. searching &amp; sorting)</li>
-                                            <li>File Reading (txt, csv files)</li>
-                                            <li>Intro to Data Science Libraries (numpy, matplotlib, pandas)</li>
-                                            <li>Group Activity: Developing an app with real data sets</li>
-                                        </ul>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 2: HighLoad
-                                            Python: SIMD, GPU, TPU. Acceleration Patterns: Theory, Practice &
+<ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
+<li>Python 101 Recap (crash course on input/output, conditionals, loops)</li>
+<li>Basic Algorithms (e.g. searching &amp; sorting)</li>
+<li>File Reading (txt, csv files)</li>
+<li>Intro to Data Science Libraries (numpy, matplotlib, pandas)</li>
+<li>Group Activity: Developing an app with real data sets</li>
+</ul>
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 2: HighLoad
+                                            Python: SIMD, GPU, TPU. Acceleration Patterns: Theory, Practice &amp;
                                             Benchmarks. Looking into Silicon.</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">
                                             Lecturer at Moscow Institute of Physics and Technology, Innopolis,
                                             Petr Andreev</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
-                                            You’ll learn a repeatable workflow to accelerate real numeric kernels using
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                            You&rsquo;ll learn a repeatable workflow to accelerate real numeric kernels using
                                             CPU SIMD, GPU arrays
-                                            + custom kernels, and TPU/XLA compilation—all from Python.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
-                                            each acceleration tier we follow the same loop: theory → minimal working
-                                            code → benchmark
-                                            that confirms (or disproves) the theory. You’ll leave with a small benchmark
+                                            + custom kernels, and TPU/XLA compilation&mdash;all from Python.</p>
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
+                                            each acceleration tier we follow the same loop: theory &rarr; minimal working
+                                            code &rarr; benchmark
+                                            that confirms (or disproves) the theory. You&rsquo;ll leave with a small benchmark
                                             harness you can
                                             reuse, plus a decision checklist for when SIMD is enough, when GPUs pay off,
                                             and when XLA/TPU is
                                             the right move.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1030 - 1200</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 3: Python 102
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 3: Python 102
                                         </div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
                                             Singapore</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
-                                            (Subject to Changes)<br>
-                                            Colab Notebook: <a href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sg-orchid hover:text-sg-red transition-colors underline">here</a>
-                                        </p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                            (Subject to Changes)<br/>
+                                            Colab Notebook: <a class="text-sg-orchid hover:text-sg-red transition-colors underline" href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing" rel="noopener noreferrer" target="_blank">here</a>
+</p>
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Beginner-to-intermediate introduction to Python programming, including:
                                         </p>
-                                        <ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
-                                            <li>Python 101 Recap (crash course on input/output, conditionals, loops)</li>
-                                            <li>Basic Algorithms (e.g. searching &amp; sorting)</li>
-                                            <li>File Reading (txt, csv files)</li>
-                                            <li>Intro to Data Science Libraries (numpy, matplotlib, pandas)</li>
-                                            <li>Group Activity: Developing an app with real data sets</li>
-                                        </ul>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 4: Building
+<ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
+<li>Python 101 Recap (crash course on input/output, conditionals, loops)</li>
+<li>Basic Algorithms (e.g. searching &amp; sorting)</li>
+<li>File Reading (txt, csv files)</li>
+<li>Intro to Data Science Libraries (numpy, matplotlib, pandas)</li>
+<li>Group Activity: Developing an app with real data sets</li>
+</ul>
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 4: Building
                                             an AI Agent Workflow with LangGraph and MongoDB</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Developer Advocate - MongoDB, Teo Wen Jie</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Join
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Join
                                             me in this workshop to learn the foundations of agent reasoning, memory, and
                                             tools through
                                             a hands-on experience. We will create a multi-tool AI Agent powered by Large
@@ -950,68 +877,63 @@
                                             (LLMs) and VoyageAI, leveraging on MongoDB for persistence and search. We
                                             also be using the
                                             LangGraph framework to orchestrate customizable agentic workflows.</p>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1200 - 1400</td>
-                                    <td colspan="2"
-                                        class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5">
-                                        Lunch & Networking</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5 block md:table-cell w-full md:w-auto" colspan="2">
+                                        Lunch &amp; Networking</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1400 - 1530</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 5: Hosting
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 5: Hosting
                                             open LLM models with Python</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Developer Relations Engineer - Google, Thu Ya Kyaw</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Ever
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Ever
                                             wondered how to make an AI flawlessly understand a "Kopi O Kosong Peng"
                                             order? Step into
-                                            the AI Kopitiam! In this hands-on workshop, you’ll learn how to use the
+                                            the AI Kopitiam! In this hands-on workshop, you&rsquo;ll learn how to use the
                                             Agent Development Kit
                                             (ADK) to build stateful, reliable, graph-based AI agents. Say goodbye to
                                             unpredictable chat
                                             loops and learn how to structure complex AI workflows while building your
                                             very own virtual
                                             Kopitiam assistant.</p>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 6: Efficient
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 6: Efficient
                                             Python Testing: Leveraging Parametrization, Fixtures, Monkeypatching and
                                             Marks</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                             Software Consultant, Zenika Singapore, Cheong Yu Jia</div>
-                                        <ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
-                                            <li>Overview of basic testing principles - AAAC, TDD (5 mins)</li>
-                                            <li>Installation of pytest, environment setup (5 mins)</li>
-                                            <li>Writing a basic functionality and unit test (10 mins)</li>
-                                            <li>Parametrization - passing different data to the same test (10 mins)</li>
-                                            <li>Fixtures - reusing data across multiple tests (10 mins)</li>
-                                            <li>Monkeypatch and mocks - environmental variables, external interactions (10 mins)</li>
-                                            <li>Marks - autouse fixtures, skip (5 mins)</li>
-                                            <li>Conclusion (5 mins)</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors">
-                                    <td
-                                        class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap">
+<ul class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed list-disc pl-5 space-y-1">
+<li>Overview of basic testing principles - AAAC, TDD (5 mins)</li>
+<li>Installation of pytest, environment setup (5 mins)</li>
+<li>Writing a basic functionality and unit test (10 mins)</li>
+<li>Parametrization - passing different data to the same test (10 mins)</li>
+<li>Fixtures - reusing data across multiple tests (10 mins)</li>
+<li>Monkeypatch and mocks - environmental variables, external interactions (10 mins)</li>
+<li>Marks - autouse fixtures, skip (5 mins)</li>
+<li>Conclusion (5 mins)</li>
+</ul>
+</td>
+</tr>
+<tr class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
+<td class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
                                         1530 - 1700</td>
-                                    <td class="px-6 py-5 align-top">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 7: TBA</div>
-                                    </td>
-                                    <td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10">
-                                        <div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 8: Do you
+<td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue A - Event Hall 1-1</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 7: TBA</div>
+</td>
+<td class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"><div class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">Venue B - Event Hall 1-2</div>
+<div class="font-bold text-gray-900 dark:text-white mb-1">Workshop 8: Do you
                                             know how well your model is doing? Evaluate your LLMs</div>
-                                        <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
+<div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
                                             Adovate - Jetbrains, Cheuk Ting Ho</div>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
                                             Language Models (LLMs) are becoming central to modern applications, yet
                                             effectively
                                             evaluating their performance remains a significant challenge. How do you
@@ -1020,7 +942,7 @@
                                             responses adhere to
                                             safety guidelines (guard-railing)? This hands-on workshop addresses these
                                             critical questions.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">We
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">We
                                             will begin with an essential revision of the Hugging Face Transformers
                                             library, covering
                                             basic LLM inference and fine-tuning. The core of the workshop will introduce
@@ -1030,7 +952,7 @@
                                             learn how to leverage Lighteval to compare various LLMs available on the
                                             Hugging Face Hub using
                                             a range of pre-built tasks and metrics.</p>
-                                        <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+<p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                             Finally, we will delve into advanced evaluation techniques, focusing on
                                             creating custom tasks
                                             and metrics tailored to unique, real-world application requirements.
@@ -1041,13 +963,12 @@
                                             possess the practical
                                             skills to rigorously evaluate, benchmark, and fine-tune your LLMs with
                                             confidence.</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
