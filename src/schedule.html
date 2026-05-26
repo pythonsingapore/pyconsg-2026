@@ -450,7 +450,33 @@
                                     <div
                                         class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
                                         Venue B - Event Hall 1-2</div>
-                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+                                    <div class="font-bold text-gray-900 dark:text-white mb-1">Giving Your AI Agent a
+                                        Database Brain: In-Process Analytics with chDB</div>
+                                    <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Technical
+                                        Director and Creator of chDB - ClickHouse - Auxten Wang</div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Most
+                                        "data agents" today are slow and fragile: they spin up a database server,
+                                        shuttle data over the network, and still choke on anything past a few million
+                                        rows. What if your agent could run a full analytical engine inside the same
+                                        Python process &mdash; no server, no setup, just `import chdb`?</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">chDB embeds
+                                        ClickHouse, one of the fastest analytical databases in the world, directly into
+                                        Python. In this talk we'll build two things live on stage. First, chDB as a
+                                        data hub: a single SQL statement that blends a local file (CSV, Parquet, JSON)
+                                        with data pulled live from a remote database &mdash; no ETL, no loading step.
+                                        Second, and the heart of the talk: agent memory as a database problem. Today
+                                        agents store memory as CLAUDE.md / AGENTS.md files, a folder of .jsonl logs,
+                                        maybe a vector DB bolted on the side &mdash; and it breaks the moment you want to
+                                        query across sessions or run real evals. We'll show why what agents actually
+                                        want is an in-process OLAP engine with three native primitives in one library:
+                                        structured tables for runs/context/evals, vector indexes for semantic recall,
+                                        and cross-session SQL for "how did I solve this kind of task last time?"</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">And because
+                                        chDB is ClickHouse, the path scales cleanly: prototype locally on your laptop,
+                                        then when your data outgrows a single machine or you need to share and sync it,
+                                        move the same SQL to ClickHouse Server or ClickHouse Cloud with no rewrite.
+                                        You'll leave knowing how to drop chDB into your own project the same afternoon
+                                        &mdash; and with ideas you can build on at the hackathon.</p>
                                 </td>
                             </tr>
                             <tr
@@ -528,7 +554,10 @@
                                         should be able to steal this pattern for your own system.</p>
                                     <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">🔗
                                         Article introducing this architecture - DevOps.dev Medium:
-                                        https://medium.com/p/eef601f22518</p>
+                                        <a href="https://medium.com/p/eef601f22518" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-sg-orchid hover:text-sg-red transition-colors">https://medium.com/p/eef601f22518</a>
+                                    </p>
                                 </td>
                             </tr>
                             <tr
@@ -619,31 +648,29 @@
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
                                 <td
                                     class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    0900 - 0915</td>
+                                    0900 - 0930</td>
                                 <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto"
                                     colspan="2">
-                                    Day 2 Opening</td>
+                                    Day 2 Opening | Work on AI Agent / Hackathon</td>
                             </tr>
                             <tr
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
                                 <td
                                     class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    0915 - 1000</td>
-                                <td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
+                                    0930 - 1000</td>
+                                <td
+                                    class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0">
                                     <div
-                                        class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">
-                                        Venue: Event Hall 1-1 + Event Hall 1-2</div>
-                                    <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 3:
-                                        Generative AI &amp; The Future of Python Developers</div>
-                                    <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Senior
-                                        Developer Relations Engineer - Google, Thu Ya Kyaw</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">AI is the
-                                        hottest topic in tech right now, and Python is the undisputed language driving
-                                        it. What does this mean for you? To stay ahead of the curve, we must move past
-                                        "vibe coding" and building simple chatbots. We need to look ahead and apply real
-                                        engineering skills. This keynote explores the practical path forward: from
-                                        understanding Pydantic for robust data validation to mastering agentic skills by
-                                        leveraging LangChain and Agent Development Kits.</p>
+                                        class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
+                                        Venue A - Event Hall 1-1</div>
+                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+                                </td>
+                                <td
+                                    class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0">
+                                    <div
+                                        class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
+                                        Venue B - Event Hall 1-2</div>
+                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
                                 </td>
                             </tr>
                             <tr
@@ -815,48 +842,52 @@
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
                                 <td
                                     class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    1400 - 1430</td>
-                                <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto"
-                                    colspan="2">
-                                    Combined Talk Section</td>
-                            </tr>
-                            <tr
-                                class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
-                                <td
-                                    class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    1430 - 1500</td>
-                                <td
-                                    class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0">
+                                    1400 - 1445</td>
+                                <td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto" colspan="2">
                                     <div
-                                        class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
-                                        Venue A - Event Hall 1-1</div>
-                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
-                                </td>
-                                <td
-                                    class="px-6 py-5 align-top border-l border-gray-200 dark:border-white/10 block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0">
-                                    <div
-                                        class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
-                                        Venue B - Event Hall 1-2</div>
-                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+                                        class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">
+                                        Venue: Event Hall 1-1 + Event Hall 1-2</div>
+                                    <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">Keynote 3:
+                                        Generative AI &amp; The Future of Python Developers</div>
+                                    <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Senior
+                                        Developer Relations Engineer - Google, Thu Ya Kyaw</div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">AI is the
+                                        hottest topic in tech right now, and Python is the undisputed language driving
+                                        it. What does this mean for you? To stay ahead of the curve, we must move past
+                                        "vibe coding" and building simple chatbots. We need to look ahead and apply real
+                                        engineering skills. This keynote explores the practical path forward: from
+                                        understanding Pydantic for robust data validation to mastering agentic skills by
+                                        leveraging LangChain and Agent Development Kits.</p>
                                 </td>
                             </tr>
                             <tr
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
                                 <td
                                     class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    1500 - 1510</td>
-                                <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center bg-gray-100 dark:bg-white/5 block md:table-cell w-full md:w-auto"
+                                    1445 - 1530</td>
+                                <td class="px-6 py-5 align-top block md:table-cell w-full md:w-auto border-t border-gray-100 dark:border-white/5 md:border-t-0"
                                     colspan="2">
-                                    Break (remove partition)</td>
+                                    <div
+                                        class="mobile-label text-xs font-bold text-gray-500 uppercase mb-2 mt-4 md:mt-0">
+                                        Venue: Event Hall 1-1 + Event Hall 1-2</div>
+                                    <div class="font-bold text-xl text-gray-900 dark:text-white mb-2">SkillsFuture Advice
+                                        Workshop</div>
+                                    <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Lifelong
+                                        Learning SG Instructor</div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Unlock
+                                        your potential with our SkillsFuture Advice workshop, where participants will
+                                        explore emerging industry trends, identify in-demand skills, and learn how to
+                                        tap on SkillsFuture resources to support their career journey.</p>
+                                </td>
                             </tr>
                             <tr
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
                                 <td
                                     class="px-6 py-5 align-top font-mono font-bold text-pyblue dark:text-pyyellow whitespace-nowrap block md:table-cell w-full md:w-auto">
-                                    1510 - 1600</td>
+                                    1530 - 1600</td>
                                 <td class="px-6 py-5 align-top font-semibold text-gray-900 dark:text-white text-center block md:table-cell w-full md:w-auto"
                                     colspan="2">
-                                    Lightning Talks (8-10 slots)</td>
+                                    Lightning Talks</td>
                             </tr>
                             <tr
                                 class="hover:bg-gray-50/80 dark:hover:bg-white/5 transition-colors block md:table-row border-b border-gray-200 dark:border-white/10 md:border-none">
@@ -871,14 +902,12 @@
                                         From PyCon APAC to PythonAsia: Building Connections Across Communities</div>
                                     <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Executive
                                         Director - Python Asia Organisation, Freilla Mae Espinola</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">- A
-                                        simple introduction to the Python Asia Organization and what we are
-                                        building.
-                                        - How Python communities across Asia can connect and create more
-                                        opportunities.
-                                        - My personal journey with Python and how the community has shaped my
-                                        learning.
-                                        - Our ongoing collaboration with PyCon SG.</p>
+                                    <ul class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed list-disc pl-5 space-y-2">
+                                        <li>A simple introduction to the Python Asia Organization and what we are building.</li>
+                                        <li>How Python communities across Asia can connect and create more opportunities.</li>
+                                        <li>My personal journey with Python and how the community has shaped my learning.</li>
+                                        <li>Our ongoing collaboration with PyCon Singapore.</li>
+                                    </ul>
                                 </td>
                             </tr>
                             <tr
