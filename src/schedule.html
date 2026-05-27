@@ -8,23 +8,42 @@
                 19th - 21st June 2026
             </p>
         </div>
-        <div x-data="{ tab: 'day1' }">
-            <div class="flex justify-center mb-8 space-x-4">
-                <button
-                    :class="{ 'bg-pyblue text-white shadow-md': tab === 'day1', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day1' }"
-                    @click="tab = 'day1'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 1</button>
-                <button
-                    :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2' }"
-                    @click="tab = 'day2'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 2</button>
-                <button
-                    :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2_pyladies', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2_pyladies' }"
-                    @click="tab = 'day2_pyladies'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 2
-                    (PyLadies Track)</button>
-                <button
-                    :class="{ 'bg-pyblue text-white shadow-md': tab === 'day3', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day3' }"
-                    @click="tab = 'day3'" class="px-6 py-2 rounded-full font-semibold transition-all">Day 3
-                    (Workshops)</button>
-            </div>
+        <div x-data="{ tab: 'day1', showDesc: true }">
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-start gap-8">
+                <!-- Sidebar / Navigation Buttons -->
+                <div class="w-full lg:w-64 flex-shrink-0 flex flex-col space-y-3">
+                    <button
+                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day1', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day1' }"
+                        @click="tab = 'day1'" class="px-6 py-3 rounded-xl font-semibold transition-all text-center lg:text-left w-full">Day 1</button>
+                    <button
+                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2' }"
+                        @click="tab = 'day2'" class="px-6 py-3 rounded-xl font-semibold transition-all text-center lg:text-left w-full">Day 2</button>
+                    <button
+                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day2_pyladies', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day2_pyladies' }"
+                        @click="tab = 'day2_pyladies'" class="px-6 py-3 rounded-xl font-semibold transition-all text-center lg:text-left w-full">Day 2 (PyLadies Track)</button>
+                    <button
+                        :class="{ 'bg-pyblue text-white shadow-md': tab === 'day3', 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300': tab !== 'day3' }"
+                        @click="tab = 'day3'" class="px-6 py-3 rounded-xl font-semibold transition-all text-center lg:text-left w-full">Day 3 (Workshops)</button>
+                    
+                    <div class="h-px bg-gray-200 dark:bg-white/10 my-2"></div>
+                    
+                    <!-- Toggle Description Button -->
+                    <button
+                        @click="showDesc = !showDesc"
+                        class="px-6 py-3 rounded-xl font-semibold transition-all border border-pyblue dark:border-pyyellow text-pyblue dark:text-pyyellow hover:bg-pyblue hover:text-white dark:hover:bg-pyyellow dark:hover:text-[#0a0a14] text-center w-full flex items-center justify-center space-x-2">
+                        <svg x-show="showDesc" class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                        <svg x-show="!showDesc" class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.563-3.076m3.613-3.613A9.993 9.993 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M9.88 9.88a3 3 0 104.24 4.24M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M9.88 9.88a3 3 0 104.24 4.24"></path>
+                        </svg>
+                        <span x-text="showDesc ? 'Hide Descriptions' : 'Show Descriptions'"></span>
+                    </button>
+                </div>
+                
+                <!-- Main Schedule Content -->
+                <div class="flex-grow min-w-0">
             <!-- Day 1 -->
             <div class="glass-card rounded-3xl overflow-hidden" x-show="tab === 'day1'">
                 <div class="overflow-x-auto">
@@ -75,7 +94,7 @@
                                         Kiasu, Still Kena Replaced by AI?</div>
                                     <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Director
                                         / Vice Chair - Python Software Foundation, Georgi Ker</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Many
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Many
                                         of us in Asia grew up with the same advice: study hard, choose the right
                                         path, and your
                                         future will be secure. We did everything right. Extra tuition. Good grades.
@@ -111,7 +130,7 @@
                                         Possible Together</div>
                                     <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Professor @
                                         NUS; Director Google-NUS Innovation and Research Center, Anthony Tung</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Most
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Most
                                         conversations about AI at work stop at the copilot: the AI that sits beside you
                                         and speeds up what you already do. It is useful, but it is only the first stage
                                         of a much longer progression &mdash; and professionals who settle there are
@@ -166,7 +185,7 @@
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">AI
                                         Software Developer - Cambridge University Press &amp; Assessment, Cyrus
                                         Mante</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
                                         Language Models dominate today&rsquo;s NLP conversations, but they are often the
                                         wrong tool for
                                         the first and most important question: what is my data actually about? When
@@ -191,7 +210,7 @@
                                         Copilot: Trustworthy Python on Azure</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
                                         Engagement Lead ANZ &amp; Asia - Microsoft, Michelle Mei Ling Sandford</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Building real-world multiagent systems in Python doesn't have to be dry or
                                         mysterious! In this
                                         lively 30-minute session, you'll meet a cast of Singaporean-inspired Python
@@ -223,7 +242,7 @@
                                         for Data You Don&rsquo;t Control</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Developer Community Manager - Apify, Saurav Jain</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
                                         web isn&rsquo;t an API, but Python developers often treat it like one. This talk
                                         explores how to
                                         design Python interfaces for unstable data sources, focusing on schema
@@ -239,7 +258,7 @@
                                         Transformers v5: Simpler, Clearer, and More Modular</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
                                         Learning Engineer - Hugging Face, Aritra Ray Gosthipaty</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Tokenization is one of the most critical but least understood parts of
                                         modern NLP systems. For
                                         years, tokenizers in transformers were treated as opaque artifacts tied to
@@ -288,7 +307,7 @@
                                         the Open Source Interpreter Really Works</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Associate
                                         Software Engineer - Red Hat, Allen Yesudasan</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         CPython is the reference implementation of Python used by millions of
                                         developers, yet few
                                         understand what happens beneath the surface when a Python program runs. This
@@ -313,7 +332,7 @@
                                         A BirdNET Pipeline for Bird Monitoring in Singapore</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Engineer,
                                         MVP Studio at NUS Enterprise, Aryn Choong Yue Lin</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                         project uses passive acoustic recordings from sites across Singapore and the
                                         BirdNET
                                         deep-learning model to detect bird species and track their calling activity
@@ -341,7 +360,7 @@
                                         HealthTech AI Systems with Python: Lessons from HealthPredictor.AI</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Founding
                                         CTO, HealthPredictor.ai, Melvin Ng, RPh</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Building AI systems in practice is very different from tutorials and demos.
                                         Beyond models and
                                         datasets, engineers must navigate messy data, system design trade-offs, and
@@ -375,7 +394,7 @@
                                         Python Code (And Why It Works&hellip; Until It Doesn&rsquo;t)</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Software
                                         Architect - Python and Open Source - EPAM Systems, Vivek Keshore</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
                                         if we deliberately write the worst Python code possible? In this talk, I
                                         will intentionally
                                         write Python code full of classic anti-patterns, global state chaos, god
@@ -414,7 +433,7 @@
                                         Surviving Python's AI Supply Chain Minefield</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Red Team
                                         Lead, Security Assurance - Bytedance, Yuli Zhan</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
                                         March 2026, attackers compromised Trivy &mdash; a security scanner trusted by
                                         thousands of CI/CD
                                         pipelines &mdash; and used it to steal PyPI publishing tokens from LiteLLM, one
@@ -454,12 +473,12 @@
                                         Database Brain: In-Process Analytics with chDB</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Technical
                                         Director and Creator of chDB - ClickHouse - Auxten Wang</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Most
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Most
                                         "data agents" today are slow and fragile: they spin up a database server,
                                         shuttle data over the network, and still choke on anything past a few million
                                         rows. What if your agent could run a full analytical engine inside the same
                                         Python process &mdash; no server, no setup, just `import chdb`?</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">chDB embeds
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">chDB embeds
                                         ClickHouse, one of the fastest analytical databases in the world, directly into
                                         Python. In this talk we'll build two things live on stage. First, chDB as a
                                         data hub: a single SQL statement that blends a local file (CSV, Parquet, JSON)
@@ -471,7 +490,7 @@
                                         want is an in-process OLAP engine with three native primitives in one library:
                                         structured tables for runs/context/evals, vector indexes for semantic recall,
                                         and cross-session SQL for "how did I solve this kind of task last time?"</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">And because
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">And because
                                         chDB is ClickHouse, the path scales cleanly: prototype locally on your laptop,
                                         then when your data outgrows a single machine or you need to share and sync it,
                                         move the same SQL to ClickHouse Server or ClickHouse Cloud with no rewrite.
@@ -493,7 +512,7 @@
                                         Prompt: Scaling AI Capabilities with Agent Skills</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Gen C
                                         Community Lead, Jiawei Lin</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">As
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">As
                                         LLM-powered agents move from simple chat interfaces to complex autonomous
                                         systems, developers
                                         face a recurring challenge: the "Monolithic Prompt." Cramming every tool,
@@ -523,11 +542,11 @@
                                         and Scalable Notification System</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Backend
                                         Software Engineer - Kakobank, GyeongSeon Park</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">What
                                         happens when your notification job silently sends the same message twice &mdash;
                                         because someone
                                         forgot deduplication logic that gets copy-pasted into every new job?</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Every
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Every
                                         notification type on my team used to require its own cron job, its own
                                         deploy, and its own
                                         prayer.
@@ -537,9 +556,9 @@
                                         60,000&ndash;130,000 messages to ~30,000 users in about 8 minutes, using Python,
                                         PostgreSQL, and
                                         Airflow.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
                                         key idea: notification rules live in the schema, not the codebase.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Each
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Each
                                         rule is just a row: a cron schedule, a SQL query to find "what happened",
                                         another SQL query
                                         to find "who cares", and a template ID. Arguments flow from one query to the
@@ -548,11 +567,11 @@
                                         No deploy, no PR, no waiting on engineers. Our ops team started adding their
                                         own notifications
                                         within a day.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">I'll
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">I'll
                                         walk through the architecture, show real code, and share what broke along
                                         the way. You
                                         should be able to steal this pattern for your own system.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">🔗
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">🔗
                                         Article introducing this architecture - DevOps.dev Medium:
                                         <a href="https://medium.com/p/eef601f22518" target="_blank"
                                             rel="noopener noreferrer"
@@ -574,14 +593,14 @@
                                         pyproject.toml for mono-repo: Challenges and Approach.</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Machine
                                         Learning Engineer - Grab, Mou Yuan Yap</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Managing Python dependencies across a large ML pipeline mono-repo is
                                         notoriously painful. Every job environment was baked into an opaque Docker
                                         image maintained in a separate repository &mdash; requiring cross-repo pull
                                         requests, manual image tag updates, and zero local reproducibility. Teams
                                         had no lockfiles, no standardization, and little visibility into what was
                                         actually running in production.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                         talk walks through the real-world journey of adopting pyproject.toml and uv
                                         across a large ML pipeline mono-repo. We'll cover the structural pattern
                                         that makes per-job isolation clean in a mono-repo, how a curated golden base
@@ -589,7 +608,7 @@
                                         platform-hosted constraint file eliminates silent version drift after
                                         platform upgrades &mdash; all without requiring teams to coordinate manually.
                                     </p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         You'll leave with a concrete recipe for adopting uv and pyproject.toml in
                                         your own mono-repo, an honest account of the friction points, and a clear
                                         picture of how the pieces fit together from local dev through to production
@@ -687,7 +706,7 @@
                                         your AI agent never had</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Lecturer - NUS Computing, Yeo Wee Kiang</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Long
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Long
                                         prompts can look harmless at first. Over time, they can become hard to
                                         manage. This talk
                                         introduces SKILL.md as the standard operating procedure your AI agent never
@@ -709,7 +728,7 @@
                                         Distributed Cloud Infrastructure with Pulumi and pyInfra</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Consulting Engineer - MongoDB, Piti Champeethong</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">In
                                         the era of multi-cloud and distributed systems, managing infrastructure
                                         often involves a
                                         fragmented mess of YAML files and specialised Domain Specific Languages
@@ -748,12 +767,12 @@
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Leader in Finance, Investment &amp; Trading Technology, DBS Bank, Ray Goh
                                     </div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Your
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Your
                                         unit tests pass. Your CI is green. But your production code still has bugs
                                         &mdash;
                                         and they&rsquo;re
                                         hiding in edge cases you never thought to test.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                         talk demonstrates a complete, end-to-end workflow for finding real bugs in
                                         enterprise
                                         Python codebases using AI-augmented property-based testing. We&rsquo;ll use
@@ -766,7 +785,7 @@
                                         and triaging failures to distinguish genuine bugs from false positives.
                                         Valid bugs get fixed &mdash;
                                         automatically.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">The
                                         approach is grounded in a January 2026 Anthropic research study where an AI
                                         agent applied
                                         this exact workflow across 100+ popular Python packages, achieving 86%
@@ -791,7 +810,7 @@
                                         prompting: The future of dynamic video surveillance</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Consultant, AI - Zenika Singapore, Edwin Ng</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
                                         years, object detection in computer vision has been trapped within the
                                         rigid, expensive
                                         bottleneck of "closed-set" models, detecting only the specific objects they
@@ -801,7 +820,7 @@
                                         data collection, labelling, and retraining every time a new operational
                                         threat or business
                                         requirement emerges.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">This
                                         session introduces a paradigm shift: Open-Vocabulary Video Intelligence.
                                         Leveraging the
                                         latest YOLOE-26 models, we move beyond fixed categories into a unified
@@ -851,7 +870,7 @@
                                         Generative AI &amp; The Future of Python Developers</div>
                                     <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Senior
                                         Developer Relations Engineer - Google, Thu Ya Kyaw</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">AI is the
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">AI is the
                                         hottest topic in tech right now, and Python is the undisputed language driving
                                         it. What does this mean for you? To stay ahead of the curve, we must move past
                                         "vibe coding" and building simple chatbots. We need to look ahead and apply real
@@ -874,7 +893,7 @@
                                         Workshop</div>
                                     <div class="text-md font-semibold text-pyblue dark:text-pyyellow mb-4">Lifelong
                                         Learning SG Instructor</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Unlock
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-3 leading-relaxed">Unlock
                                         your potential with our SkillsFuture Advice workshop, where participants will
                                         explore emerging industry trends, identify in-demand skills, and learn how to
                                         tap on SkillsFuture resources to support their career journey.</p>
@@ -1081,14 +1100,14 @@
                                     </div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
                                         Singapore</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         (Subject to Changes)<br />
                                         Colab Notebook: <a
                                             class="text-sg-orchid hover:text-sg-red transition-colors underline"
                                             href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing"
                                             rel="noopener noreferrer" target="_blank">here</a>
                                     </p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Beginner-to-intermediate introduction to Python programming, including:
                                     </p>
                                     <ul
@@ -1111,12 +1130,12 @@
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">
                                         Lecturer at Moscow Institute of Physics and Technology, Innopolis,
                                         Petr Andreev</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         You&rsquo;ll learn a repeatable workflow to accelerate real numeric kernels
                                         using
                                         CPU SIMD, GPU arrays
                                         + custom kernels, and TPU/XLA compilation&mdash;all from Python.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">For
                                         each acceleration tier we follow the same loop: theory &rarr; minimal working
                                         code &rarr; benchmark
                                         that confirms (or disproves) the theory. You&rsquo;ll leave with a small
@@ -1141,14 +1160,14 @@
                                     </div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">PyLadies
                                         Singapore</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         (Subject to Changes)<br />
                                         Colab Notebook: <a
                                             class="text-sg-orchid hover:text-sg-red transition-colors underline"
                                             href="https://colab.research.google.com/drive/1Ty408YlCTvKQZWB69GLjFC3gQjoh0Uxg?usp=sharing"
                                             rel="noopener noreferrer" target="_blank">here</a>
                                     </p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Beginner-to-intermediate introduction to Python programming, including:
                                     </p>
                                     <ul
@@ -1169,7 +1188,7 @@
                                         an AI Agent Workflow with LangGraph and MongoDB</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Developer Advocate - MongoDB, Teo Wen Jie</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Join
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Join
                                         me in this workshop to learn the foundations of agent reasoning, memory, and
                                         tools through
                                         a hands-on experience. We will create a multi-tool AI Agent powered by Large
@@ -1202,7 +1221,7 @@
                                         Graph Workflow Agents with ADK </div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Senior
                                         Developer Relations Engineer - Google, Thu Ya Kyaw</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Ever
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Ever
                                         wondered how to make an AI flawlessly understand a "Kopi O Kosong Peng"
                                         order? Step into
                                         the AI Kopitiam! In this hands-on workshop, you&rsquo;ll learn how to use the
@@ -1258,7 +1277,7 @@
                                         know how well your model is doing? Evaluate your LLMs</div>
                                     <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Developer
                                         Adovate - Jetbrains, Cheuk Ting Ho</div>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Large
                                         Language Models (LLMs) are becoming central to modern applications, yet
                                         effectively
                                         evaluating their performance remains a significant challenge. How do you
@@ -1267,7 +1286,7 @@
                                         responses adhere to
                                         safety guidelines (guard-railing)? This hands-on workshop addresses these
                                         critical questions.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">We
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">We
                                         will begin with an essential revision of the Hugging Face Transformers
                                         library, covering
                                         basic LLM inference and fine-tuning. The core of the workshop will introduce
@@ -1277,7 +1296,7 @@
                                         learn how to leverage Lighteval to compare various LLMs available on the
                                         Hugging Face Hub using
                                         a range of pre-built tasks and metrics.</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">
                                         Finally, we will delve into advanced evaluation techniques, focusing on
                                         creating custom tasks
                                         and metrics tailored to unique, real-world application requirements.
@@ -1294,6 +1313,8 @@
                     </table>
                 </div>
             </div>
+            </div> <!-- closes flex-grow min-w-0 -->
+            </div> <!-- closes flex flex-col lg:flex-row -->
         </div>
     </div>
 </section>
