@@ -469,33 +469,7 @@
                                     <div
                                         class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
                                         Venue B - Event Hall 1-2</div>
-                                    <div class="font-bold text-gray-900 dark:text-white mb-1">Giving Your AI Agent a
-                                        Database Brain: In-Process Analytics with chDB</div>
-                                    <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Technical
-                                        Director and Creator of chDB - ClickHouse - Auxten Wang</div>
-                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Most
-                                        "data agents" today are slow and fragile: they spin up a database server,
-                                        shuttle data over the network, and still choke on anything past a few million
-                                        rows. What if your agent could run a full analytical engine inside the same
-                                        Python process &mdash; no server, no setup, just `import chdb`?</p>
-                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">chDB embeds
-                                        ClickHouse, one of the fastest analytical databases in the world, directly into
-                                        Python. In this talk we'll build two things live on stage. First, chDB as a
-                                        data hub: a single SQL statement that blends a local file (CSV, Parquet, JSON)
-                                        with data pulled live from a remote database &mdash; no ETL, no loading step.
-                                        Second, and the heart of the talk: agent memory as a database problem. Today
-                                        agents store memory as CLAUDE.md / AGENTS.md files, a folder of .jsonl logs,
-                                        maybe a vector DB bolted on the side &mdash; and it breaks the moment you want to
-                                        query across sessions or run real evals. We'll show why what agents actually
-                                        want is an in-process OLAP engine with three native primitives in one library:
-                                        structured tables for runs/context/evals, vector indexes for semantic recall,
-                                        and cross-session SQL for "how did I solve this kind of task last time?"</p>
-                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">And because
-                                        chDB is ClickHouse, the path scales cleanly: prototype locally on your laptop,
-                                        then when your data outgrows a single machine or you need to share and sync it,
-                                        move the same SQL to ClickHouse Server or ClickHouse Cloud with no rewrite.
-                                        You'll leave knowing how to drop chDB into your own project the same afternoon
-                                        &mdash; and with ideas you can build on at the hackathon.</p>
+                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
                                 </td>
                             </tr>
                             <tr
@@ -853,7 +827,11 @@
                                     <div
                                         class="mobile-label md:hidden text-xs font-bold text-gray-500 uppercase mb-2 mt-4">
                                         Venue B - Event Hall 1-2</div>
-                                    <div class="text-gray-900 dark:text-white font-semibold">TBA</div>
+                                    <div class="font-bold text-gray-900 dark:text-white mb-1">Giving Your AI Agent a Database Brain: In-Process Analytics with chDB</div>
+                                    <div class="text-sm font-semibold text-pyblue dark:text-pyyellow mb-2">Technical Director and Creator of chDB - ClickHouse - Auxten Wang</div>
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-2 leading-relaxed">Most "data agents" today are slow and fragile: they spin up a database server, shuttle data over the network, and still choke on anything past a few million rows. What if your agent could run a full analytical engine inside the same Python process &mdash; no server, no setup, just `import chdb`?</p>
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">chDB embeds ClickHouse, one of the fastest analytical databases in the world, directly into Python. In this talk we'll build two things live on stage. First, chDB as a data hub: a single SQL statement that blends a local file (CSV, Parquet, JSON) with data pulled live from a remote database &mdash; no ETL, no loading step. Second, and the heart of the talk: agent memory as a database problem. Today agents store memory as CLAUDE.md / AGENTS.md files, a folder of .jsonl logs, maybe a vector DB bolted on the side &mdash; and it breaks the moment you want to query across sessions or run real evals. We'll show why what agents actually want is an in-process OLAP engine with three native primitives in one library: structured tables for runs/context/evals, vector indexes for semantic recall, and cross-session SQL for "how did I solve this kind of task last time?"</p>
+                                    <p x-show="showDesc" class="text-gray-600 dark:text-gray-400 text-base mt-4 leading-relaxed">And because chDB is ClickHouse, the path scales cleanly: prototype locally on your laptop, then when your data outgrows a single machine or you need to share and sync it, move the same SQL to ClickHouse Server or ClickHouse Cloud with no rewrite. You'll leave knowing how to drop chDB into your own project the same afternoon &mdash; and with ideas you can build on at the hackathon.</p>
                                 </td>
                             </tr>
                             <tr
