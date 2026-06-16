@@ -144,350 +144,457 @@
             }
         });
     </script>
-<section id="hackathon" class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="text-center mb-12">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Hackathon</p>
-			<h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Architect the future of lifelong learning</h1>
-			<p class="max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				Turn <a href="https://jobsandskills.skillsfuture.gov.sg/skills-frameworks#download-the-latest-skills-framework-dataset" target="_blank" rel="noopener noreferrer"
-					class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">public jobs-skills datasets</a> into real next steps. Build practical tools that help people identify in-demand skills, close skills gaps, and discover
-				upskilling pathways — then demo what you made with the PyCon Singapore community and the world.
-			</p>
-			<p class="mt-6 max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				Developers, data practitioners, designers, educators, students, career builders and hobbyists are all welcome. If you can turn messy information into a clear choice for a real
-				person, you belong here.
-			</p>
-			<div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-				<a href="#challenge"
-					class="px-6 py-3 rounded-full bg-pyblue text-white font-semibold shadow-md hover:opacity-90 transition-all">Explore The Challenge</a>
-				<a href="#join"
-					class="px-6 py-3 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/15 font-semibold transition-all">How
-					To Join</a>
-			</div>
-		</div>
+<!-- Section 1: Hero Section (Luma-inspired Layout) -->
+<section id="hackathon-hero" class="relative py-16 md:py-24 bg-white dark:bg-[#0a0a14] overflow-hidden">
+    <!-- background glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-35">
+        <div class="absolute top-10 right-10 w-[500px] h-[500px] bg-sg-orchid/15 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-10 left-10 w-[500px] h-[500px] bg-pyblue/15 rounded-full blur-[120px]"></div>
+    </div>
 
-		<div class="grid md:grid-cols-4 gap-6">
-			<div class="glass-card p-6 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Public Data</div>
-				<div class="text-gray-700 dark:text-gray-300 leading-relaxed">Use jobs-skills datasets to build with evidence.</div>
-			</div>
-			<div class="glass-card p-6 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Human-Centred</div>
-				<div class="text-gray-700 dark:text-gray-300 leading-relaxed">Make complex data feel simple without flattening decisions.</div>
-			</div>
-			<div class="glass-card p-6 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Actionable</div>
-				<div class="text-gray-700 dark:text-gray-300 leading-relaxed">Move from insight to “what should I do today?”.</div>
-			</div>
-			<div class="glass-card p-6 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Demo-Ready</div>
-				<div class="text-gray-700 dark:text-gray-300 leading-relaxed">Prototype fast. Tell a clear user story.</div>
-			</div>
-		</div>
-	</div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Centralised Badge -->
+        <div class="flex justify-center mb-8">
+            <span
+                class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] bg-sg-red/10 text-sg-red dark:bg-sg-red/20 dark:text-sg-red-400">
+                PyCon Singapore 2026 Hackathon
+            </span>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+            <!-- Left Column: Title, Tracks summary, CTAs -->
+            <div class="lg:col-span-7 space-y-8">
+                <!-- Title with increased margin bottom -->
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-10">
+                    Architecting the Future of <span class="text-gradient">Lifelong Learning</span>
+                </h1>
+
+                <!-- Track Overview Summary in Hero -->
+                <div class="space-y-4 border-l-2 border-sg-orchid/30 pl-6 my-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-sg-orchid"></span>
+                            Track 1: Job &amp; Skills Track
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-base mt-1">
+                            Build data-driven career explorers, skill gap analyzers, and upskilling pathway tools using
+                            public framework datasets.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-pyyellow"></span>
+                            Track 2: Open Track
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-base mt-1">
+                            Unleash Python creativity to build anything useful, playful, or "boliao but harmless"
+                            community helpers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA Actions -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://pycon.sg/hackathon.html"
+                        class="px-8 py-4 rounded-full bg-sg-red hover:bg-sg-red/90 text-white font-extrabold shadow-lg shadow-sg-red/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center text-lg">
+                        Register for Hackathon now!
+                    </a>
+                    <a href="https://eventyay.com/pugs/pyconsg26/" target="_blank" rel="noopener noreferrer"
+                        class="px-8 py-4 rounded-full bg-pyblue hover:bg-pyblue/90 text-white font-extrabold shadow-lg shadow-pyblue/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center text-lg">
+                        Sign up for PyConSG Now!
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Luma-style event card detailing metadata -->
+            <div
+                class="lg:col-span-5 bg-gray-50/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-8 rounded-3xl shadow-xl backdrop-blur-md">
+                <h3
+                    class="text-xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-white/10 pb-4">
+                    Event Details</h3>
+
+                <div class="space-y-6">
+                    <!-- Date -->
+                    <div class="flex items-start gap-4">
+                        <div class="p-2.5 bg-sg-orchid/10 text-sg-orchid rounded-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Timeline</div>
+                            <div class="font-bold text-gray-900 dark:text-white mt-0.5">19th June – 24th June 2026</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Size -->
+                    <div class="flex items-start gap-4">
+                        <div class="p-2.5 bg-pyblue/10 text-pyblue rounded-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Team Size</div>
+                            <div class="font-bold text-gray-900 dark:text-white mt-0.5">1 – 3 members</div>
+                        </div>
+                    </div>
+
+                    <!-- Prize Pool -->
+                    <div class="flex items-start gap-4">
+                        <div class="p-2.5 bg-pyyellow/10 text-pyyellow dark:text-pyyellow rounded-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Prize Pool</div>
+                            <div class="font-bold text-gray-900 dark:text-white mt-0.5">$10 000 of OpenAI API Credits +
+                                6 Months of ChatGPT Pro</div>
+                        </div>
+                    </div>
+
+                    <!-- Registration Reward -->
+                    <div class="flex items-start gap-4">
+                        <div class="p-2.5 bg-sg-red/10 text-sg-red rounded-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Participation Reward
+                            </div>
+                            <div class="font-bold text-gray-900 dark:text-white mt-0.5">$50 OpenAI API Credits + 1 week
+                                of ChatGPT Pro to build</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section id="challenge" class="py-20 bg-gray-50 dark:bg-white/5">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mb-12 text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">The Challenge</p>
-			<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Design decision support that feels immediate</h2>
-			<p class="max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				Many people want to upgrade their skills, but struggle to translate frameworks, job requirements, and skill lists into practical action. The data exists — the
-				journey doesn't.
-			</p>
-		</div>
+<!-- Section 2: Tracks (Interactive Alpine.js Tabs & Larger Text) -->
+<section id="tracks" class="py-20 bg-gray-50 dark:bg-white/5 relative" x-data="{ activeTrack: 'track1' }">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Choose Your Track</h2>
+        </div>
 
-		<div class="grid lg:grid-cols-1 gap-8 items-start">
-			<div class="glass-card p-8 rounded-2xl">
-				<div class="grid md:grid-cols-2 gap-8 text-gray-700 dark:text-gray-300">
-					<div>
-						<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Design Brief</div>
-						<div class="text-lg font-bold text-gray-900 dark:text-white">Help a lifelong learner answer three questions quickly</div>
-						<ul class="mt-4 leading-relaxed list-disc pl-5 space-y-2">
-							<li>Where can I go next?</li>
-							<li>What skills matter most?</li>
-							<li>What should I do today?</li>
-						</ul>
-					</div>
-					<div>
-						<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Success Criteria</div>
-						<ul class="leading-relaxed list-disc pl-5 space-y-2">
-							<li>Understandable, locally relevant, and accessible</li>
-							<li>Actionable recommendations with realistic next steps</li>
-							<li>Strong product thinking: simple flows, clear priorities</li>
-							<li>Transparent data logic: show how the data influences choices</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <!-- Toggle Buttons -->
+        <div class="flex justify-center gap-4 mb-10 max-w-md mx-auto">
+            <button @click="activeTrack = 'track1'"
+                :class="activeTrack === 'track1' ? 'bg-sg-orchid text-white shadow-lg shadow-sg-orchid/25' : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/15 dark:border-transparent'"
+                class="flex-1 px-6 py-4 rounded-2xl font-bold transition-all duration-300 text-lg md:text-xl">
+                Track 1: Job &amp; Skills
+            </button>
+            <button @click="activeTrack = 'track2'"
+                :class="activeTrack === 'track2' ? 'bg-pyyellow text-gray-900 shadow-lg shadow-pyyellow/25' : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/15 dark:border-transparent'"
+                class="flex-1 px-6 py-4 rounded-2xl font-bold transition-all duration-300 text-lg md:text-xl">
+                Track 2: Open Track
+            </button>
+        </div>
+
+        <!-- Track Content Panels -->
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Track 1 Content -->
+            <div x-show="activeTrack === 'track1'" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                class="glass-card p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-white/10 shadow-xl space-y-8">
+
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-sg-orchid/10 rounded-2xl text-sg-orchid">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-sg-orchid font-bold">Primary Track</span>
+                        <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white">Job &amp; Skills Track</h3>
+                    </div>
+                </div>
+
+                <p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed">
+                    Turn public jobs-skills datasets into practical tools. Build career pathway explorers, role-to-skill
+                    maps, skills-gap analysers, or learning action planners to help people navigate their upskilling
+                    journey.
+                </p>
+
+                <!-- Dataset Download Button -->
+                <div class="pt-2">
+                    <a href="https://jobsandskills.skillsfuture.gov.sg/skills-frameworks#download-the-latest-skills-framework-dataset"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 text-lg font-bold text-sg-orchid hover:text-sg-red transition-colors duration-300 bg-sg-orchid/10 dark:bg-sg-orchid/20 px-6 py-4 rounded-2xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download SkillsFuture Dataset
+                    </a>
+                </div>
+
+                <!-- Expanded Info -->
+                <div class="grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-white/10 pt-8 mt-6">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">Suggested
+                            Build Ideas</h4>
+                        <ul class="list-disc pl-6 text-lg text-gray-600 dark:text-gray-300 space-y-2">
+                            <li><strong>Career Pathfinder</strong>: Adjacent roles via transferable skills.</li>
+                            <li><strong>Skills Gap Mapper</strong>: Target and rank key missing skills.</li>
+                            <li><strong>Learning Action Planner</strong>: Custom milestone pathways.</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">What Good
+                            Products Do</h4>
+                        <ul class="list-disc pl-6 text-lg text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>Explain why recommendations are shown using dataset logic.</li>
+                            <li>Offer actionable pathways instead of overwhelming skill sets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 2 Content -->
+            <div x-show="activeTrack === 'track2'" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                class="glass-card p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-white/10 shadow-xl space-y-8">
+
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-pyyellow/10 rounded-2xl text-pyyellow">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-pyyellow font-bold">Creative Track</span>
+                        <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white">Open Track</h3>
+                    </div>
+                </div>
+
+                <p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed">
+                    Unleash your creativity. Build anything useful and playful, or "boliao but harmless". Life is
+                    beautiful in its diversity and inclusion — and so is Python.
+                </p>
+
+                <!-- Expanded Info -->
+                <div class="grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-white/10 pt-8 mt-6">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">Build Ideas
+                        </h4>
+                        <ul class="list-disc pl-6 text-lg text-gray-600 dark:text-gray-300 space-y-2">
+                            <li><strong>Playful Utilities</strong>: Interactive apps, custom games, or funny Python
+                                mods.</li>
+                            <li><strong>Community Projects</strong>: Visualizations, helper tools, or automation hacks.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">Who is
+                            welcome</h4>
+                        <ul class="list-disc pl-6 text-lg text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>Students, retirees, career builders, and developers of all skill levels.</li>
+                            <li>The focus is on practical learning, positive community outcomes, and sharing Python.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section id="build" class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mb-12 text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">What You’ll Build</p>
-			<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">From raw data to career action in a few clicks</h2>
-			<p class="max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				Think career pathway explorers, role-to-skill maps, skills-gap analysers, reskilling recommendation engines, personalised learning roadmaps, or explainable
-				dashboards for lifelong learning.
-			</p>
-		</div>
+<!-- Section 3: Judging Criteria (Concise Titles with SVG Icons) -->
+<section id="judging" class="py-20 bg-white dark:bg-[#0a0a14]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Evaluation</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Judging Criteria</h2>
+        </div>
 
-		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Role Fit</div>
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Match skills to roles</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Help users understand which roles are realistic next moves and why.</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Skill Gaps</div>
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Find what’s missing</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Pinpoint rising capabilities and prioritise the most urgent gaps.</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Course Actions</div>
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Turn insight into steps</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Suggest next learning actions that feel doable for working adults.</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-2">Career Clarity</div>
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Explain the market</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Make labour-market signals understandable without overwhelming charts.</p>
-			</div>
-		</div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <!-- Criteria 1 -->
+            <div
+                class="glass-card p-8 rounded-3xl border border-gray-200 dark:border-white/10 text-center flex flex-col justify-center items-center min-h-[200px]">
+                <div class="mb-4 p-3 bg-sg-red/10 text-sg-red rounded-2xl w-fit">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7a3 3 0 100-6 3 3 0 000 6zm0 10a3 3 0 100-6 3 3 0 000 6zm6-5h.01M17 16a3 3 0 100-6 3 3 0 000 6zM8 7v6m0 0a3 3 0 003 3h3" />
+                    </svg>
+                </div>
+                <div class="text-xs uppercase tracking-widest text-sg-red font-bold mb-2">Core Split</div>
+                <h3 class="text-xl font-extrabold text-gray-900 dark:text-white">Process &amp; Product</h3>
+            </div>
 
-		<div class="mt-10 grid lg:grid-cols-4 gap-6">
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-3">Suggested Build Ideas</div>
-				<ul class="text-gray-700 dark:text-gray-300 leading-relaxed list-disc pl-5 space-y-2">
-					<li>Career Pathfinder: adjacent roles via transferable skills</li>
-					<li>Skills Gap Mapper: rank urgent skills for a target role</li>
-					<li>Learning Action Planner: a 30-60-90 day plan with milestones</li>
-					<li>Insight Storytelling: explain jobs-skills data for the public</li>
-					<li>(Your creative ideas here)</li>
-				</ul>
-			</div>
+            <!-- Criteria 2 -->
+            <div
+                class="glass-card p-8 rounded-3xl border border-gray-200 dark:border-white/10 text-center flex flex-col justify-center items-center min-h-[200px]">
+                <div class="mb-4 p-3 bg-sg-orchid/10 text-sg-orchid rounded-2xl w-fit">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                </div>
+                <div class="text-xs uppercase tracking-widest text-sg-orchid font-bold mb-2">Data Integrity</div>
+                <h3 class="text-xl font-extrabold text-gray-900 dark:text-white">Data Quality</h3>
+            </div>
 
-			<div class="glass-card p-7 rounded-2xl lg:col-span-2">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-3">What Good Products Should Do</div>
-				<ul class="text-gray-700 dark:text-gray-300 leading-relaxed list-disc pl-5 space-y-2">
-					<li>Explain why a recommendation is shown</li>
-					<li>Separate core requirements from nice-to-have skills</li>
-					<li>Help users prioritise what to learn first</li>
-					<li>Offer realistic next steps for different starting points</li>
-					<li>Avoid overwhelming users with too many skill names at once</li>
-				</ul>
-			</div>
+            <!-- Criteria 3 -->
+            <div
+                class="glass-card p-8 rounded-3xl border border-gray-200 dark:border-white/10 text-center flex flex-col justify-center items-center min-h-[200px]">
+                <div class="mb-4 p-3 bg-pyblue/10 text-pyblue rounded-2xl w-fit">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <div class="text-xs uppercase tracking-widest text-pyblue font-bold mb-2">User Focus</div>
+                <h3 class="text-xl font-extrabold text-gray-900 dark:text-white">Overall Experience &amp; Project Value
+                </h3>
+            </div>
 
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-3">Suggested Datasets</div>
-				<ul class="text-gray-700 dark:text-gray-300 leading-relaxed list-disc pl-5 space-y-2">
-					<li>Unique Skills List</li>
-					<li>Skills Framework Dataset</li>
-					<li>TSC to Unique Skills Mapping File</li>
-				</ul>
-				<div class="mt-5 text-gray-700 dark:text-gray-300 leading-relaxed">
-					<span class="font-semibold text-gray-900 dark:text-white">Source:</span>
-					<a href="https://jobsandskills.skillsfuture.gov.sg/skills-frameworks#download-the-latest-skills-framework-dataset"
-						target="_blank" rel="noopener noreferrer" class="underline hover:text-sg-red transition-colors">jobsandskills.skillsfuture.gov.sg</a>
-				</div>
-				<div class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Feel free to explore your own</div>
-			</div>
-		</div>
-	</div>
+            <!-- Criteria 4 -->
+            <div
+                class="glass-card p-8 rounded-3xl border border-gray-200 dark:border-white/10 text-center flex flex-col justify-center items-center min-h-[200px]">
+                <div class="mb-4 p-3 bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 rounded-2xl w-fit">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <div class="text-xs uppercase tracking-widest text-gray-500 font-bold mb-2">Execution</div>
+                <h3 class="text-xl font-extrabold text-gray-900 dark:text-white">Technical Execution</h3>
+            </div>
+        </div>
+
+        <!-- Tagline after the 4 grids -->
+        <p class="mt-10 text-center text-gray-500 dark:text-gray-400 text-xl font-medium tracking-wide">
+            More information will be provided later.
+        </p>
+    </div>
 </section>
 
-<section id="join" class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mb-12 text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">How To Join</p>
-			<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Join solo or bring a team</h2>
-			<p class="max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				You may participate as an individual or as a team (maximum 3 members). Build with Python and the tools you love.
-			</p>
-		</div>
-
-		<div class="grid lg:grid-cols-1 gap-8 items-start">
-			<div class="glass-card p-8 rounded-2xl">
-				<div class="space-y-8 text-gray-700 dark:text-gray-300">
-					<div class="flex gap-4">
-						<div class="text-2xl font-bold text-sg-red flex-none">01</div>
-						<div>
-							<div class="text-lg font-bold text-gray-900 dark:text-white">Gather your team</div>
-							<p class="mt-2 leading-relaxed">Solo is fine. A duo or trio is better. Gender diversity is best.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="text-2xl font-bold text-sg-red flex-none">02</div>
-						<div>
-							<div class="text-lg font-bold text-gray-900 dark:text-white">Choose your angle</div>
-							<p class="mt-2 leading-relaxed">Discovery, matching, explainability, visualisation, or personalised next-step planning.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="text-2xl font-bold text-sg-red flex-none">03</div>
-						<div>
-							<div class="text-lg font-bold text-gray-900 dark:text-white">Prototype fast</div>
-							<p class="mt-2 leading-relaxed">Use lightweight data pipelines and strong product thinking. Bonus: apply what you learn from the PyConSG programme (talks and workshops, sponsors and partners, presenters and participants, etc.).</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="text-2xl font-bold text-sg-red flex-none">04</div>
-						<div>
-							<div class="text-lg font-bold text-gray-900 dark:text-white">Publish and explain</div>
-							<p class="mt-2 leading-relaxed">Show the user journey, your core logic, the data you used, and the actions your product generates.</p>
-						</div>
-					</div>
-					<div class="flex gap-4">
-						<div class="text-2xl font-bold text-sg-red flex-none">05</div>
-						<div>
-							<div class="text-lg font-bold text-gray-900 dark:text-white">Share to l(earn)</div>
-							<p class="mt-2 leading-relaxed">Submit via a simple form. We will collate and publish a project showcase/portfolio page.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<!-- Sponsors Section (Larger Sponsor Logos) -->
+<section class="py-20 bg-white dark:bg-[#0a0a14] border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-lg md:text-xl font-bold tracking-wider uppercase text-sg-red mb-12">Hackathon Sponsors</h3>
+        <div class="flex flex-wrap items-center justify-center gap-16">
+            <div class="bg-white dark:bg-transparent p-6 max-w-full">
+                <img src="assets/openai.png" alt="OpenAI" class="h-24 md:h-32 w-auto object-contain dark:hidden">
+                <img src="assets/openaireverse.png" alt="OpenAI"
+                    class="h-24 md:h-32 w-auto object-contain hidden dark:block">
+            </div>
+            <div class="bg-white dark:bg-transparent p-6 max-w-full">
+                <img src="assets/aisg.webp" alt="AI Singapore" class="h-24 md:h-32 w-auto object-contain">
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="judging" class="py-20 bg-gray-50 dark:bg-white/5">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mb-12 text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Judging</p>
-			<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Useful guidance, not just clever code</h2>
-			<p class="max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-				Strong entries combine technical execution with human-centred guidance. Make it clear, make it honest, make it useful.
-			</p>
-		</div>
-
-		<div class="glass-card p-7 rounded-2xl mb-8">
-			<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-3">What We Look For</div>
-			<p class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">Process matters as much as product. Show how you work with AI and people.</p>
-			<p class="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-				We are especially interested in AI-human and human-human interaction processes — not only the final outcome. Interaction logs are critical and will be mandatory part of submission. Judging is split evenly:
-				<span class="font-semibold text-gray-900 dark:text-white">Process (50%)</span> and
-				<span class="font-semibold text-gray-900 dark:text-white">Product (50%)</span>.
-			</p>
-		</div>
-
-		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Relevance</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Does it help a real user make a clearer skills or career decision?</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Technical execution</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Is the prototype reliable, readable, and demo-friendly?</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Data use</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Are dataset choices and transformations sensible, transparent, and explainable?</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-lg font-bold text-gray-900 dark:text-white">User experience</div>
-				<p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">Does it guide users toward concrete next steps without overwhelming them?</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="prizes" class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="glass-card p-10 rounded-3xl text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">Winners &amp; Prizes</p>
-			<div class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">Prizes</div>
-			<ul class="mt-6 max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed list-disc pl-5 space-y-3 text-left">
-				<li>Prize pool of 10k USD in API credits and 6 months of ChatGPT Pro for all members of the top 3 teams</li>
-				<li>All hackathon participants will receive $50 in API credits and 1 week of ChatGPT Pro access (everyone can be a winner :))</li>
-				<li>Grab vouchers sponsored by AI Singapore</li>
-			</ul>
-			<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-				<a href="https://eventyay.com/pugs/pyconsg26/" target="_blank" rel="noopener noreferrer"
-					class="inline-flex items-center justify-center bg-sg-red text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-colors">
-					Get your Standard Ticket
-				</a>
-				<a href="https://luma.com/rcoitvsq" target="_blank" rel="noopener noreferrer"
-					class="inline-flex items-center justify-center bg-sg-red text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-colors">
-					Register for Hackathon
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="faq" class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mb-12 text-center">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sg-red mb-3">FAQ</p>
-			<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Not job-hunting? You can still join.</h2>
-		</div>
-
-		<div class="grid lg:grid-cols-3 gap-6">
-			<div class="glass-card p-7 rounded-2xl lg:col-span-2">
-				<div class="text-lg font-bold text-gray-900 dark:text-white">Q. I am not actively looking to land a job. Can I work on something else?</div>
-				<p class="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-					A. Absolutely. We have an open category: build anything useful and playful, or “boliao but harmless”. Life is beautiful in its diversity and inclusion — and so
-					is Python. <a href="https://www.python.org/psf/diversity" target="_blank" rel="noopener noreferrer"
-						class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">https://www.python.org/psf/diversity</a>
-				</p>
-				<p class="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-					Whether you are open to work, employed, a student, a retiree, or a homemaker, you are welcome to join. The hackathon is about practical learning and positive outcomes that
-					can benefit the wider community beyond the conference.
-				</p>
-			</div>
-			<div class="glass-card p-7 rounded-2xl">
-				<div class="text-sm font-semibold uppercase tracking-[0.2em] text-sg-red mb-3">House Rules</div>
-				<ul class="text-gray-700 dark:text-gray-300 leading-relaxed list-disc pl-5 space-y-2">
-					<li>Be kind and constructive</li>
-					<li>Make space for newcomers</li>
-					<li>Give credit for help and sources</li>
-					<li>Follow the Code of Conduct</li>
-				</ul>
-				<div class="mt-6">
-					<a href="coc.html" class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">Read the Code of Conduct</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="py-20 bg-white dark:bg-[#0a0a14]">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="flex flex-col items-center gap-6">
-			<div class="text-2xl md:text-3xl font-extrabold tracking-wider uppercase text-sg-red">Hackathon Sponsors</div>
-			<div class="flex flex-wrap items-center justify-center gap-6">
-				<div class="bg-white dark:bg-transparent p-6 max-w-full">
-					<img src="assets/openai.png" alt="OpenAI" class="h-36 w-auto object-contain dark:hidden">
-					<img src="assets/openaireverse.png" alt="OpenAI" class="h-36 w-auto object-contain hidden dark:block">
-				</div>
-				<div class="bg-white dark:bg-transparent p-6 max-w-full">
-					<img src="assets/aisg.webp" alt="AI Singapore" class="h-36 w-auto object-contain">
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="py-20 bg-gray-50 dark:bg-white/5">
-	<div class="max-w-7xl mx-auto px-6">
-		<div class="mt-2 max-w-4xl mx-auto text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-			<div class="font-semibold text-gray-900 dark:text-white mb-2">Resources</div>
-			<div class="flex flex-col gap-2">
-				<a href="https://jobsandskills.skillsfuture.gov.sg/skills-frameworks#download-the-latest-skills-framework-dataset" target="_blank" rel="noopener noreferrer"
-					class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">https://jobsandskills.skillsfuture.gov.sg/skills-frameworks</a>
-				<a href="schedule.html" class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">https://pycon.sg/schedule.html</a>
-				<a href="aira.html" class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">https://pycon.sg/aira.html</a>
-				<a href="aiagent.html" class="text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">https://pycon.sg/aiagent.html</a>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Footer -->
+<!-- Resources Links Section -->
+<section class="py-20 bg-gray-50 dark:bg-white/5 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Hackathon Resources</h2>
+            <p class="mt-4 text-gray-500 dark:text-gray-400 text-lg">Get ahead by reading up on PyConSG 2026 programs and tools.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-6">
+            <!-- Resource 1 -->
+            <a href="https://jobsandskills.skillsfuture.gov.sg/skills-frameworks#download-the-latest-skills-framework-dataset" target="_blank" rel="noopener noreferrer" 
+               class="glass-card p-6 rounded-3xl border border-gray-200 dark:border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 block group">
+                <div>
+                    <div class="p-3 bg-sg-orchid/10 text-sg-orchid rounded-2xl w-fit mb-4 group-hover:bg-sg-orchid group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Jobs &amp; Skills Dataset</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">Official download link for the latest SkillsFramework data files.</p>
+                </div>
+                <div class="text-sg-orchid font-bold text-sm inline-flex items-center gap-1 group-hover:text-sg-red transition-colors duration-300">
+                    Access Dataset
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+            
+            <!-- Resource 2 -->
+            <a href="schedule.html" 
+               class="glass-card p-6 rounded-3xl border border-gray-200 dark:border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 block group">
+                <div>
+                    <div class="p-3 bg-sg-red/10 text-sg-red rounded-2xl w-fit mb-4 group-hover:bg-sg-red group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Conference Schedule</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">Browse PyCon Singapore talks, workshops, and timing details.</p>
+                </div>
+                <div class="text-sg-red font-bold text-sm inline-flex items-center gap-1 group-hover:text-sg-orchid transition-colors duration-300">
+                    View Schedule
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+            
+            <!-- Resource 3 -->
+            <a href="aira.html" 
+               class="glass-card p-6 rounded-3xl border border-gray-200 dark:border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 block group">
+                <div>
+                    <div class="p-3 bg-pyblue/10 text-pyblue rounded-2xl w-fit mb-4 group-hover:bg-pyblue group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">AI Ready ASEAN</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">Learn about the digital AI literacy certificate backed by AI Singapore.</p>
+                </div>
+                <div class="text-pyblue dark:text-pyyellow font-bold text-sm inline-flex items-center gap-1 group-hover:text-sg-orchid transition-colors duration-300">
+                    Certificate Details
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+            
+            <!-- Resource 4 -->
+            <a href="aiagent.html" 
+               class="glass-card p-6 rounded-3xl border border-gray-200 dark:border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 block group">
+                <div>
+                    <div class="p-3 bg-pyyellow/10 text-pyyellow dark:text-pyyellow rounded-2xl w-fit mb-4 group-hover:bg-pyyellow group-hover:text-gray-900 transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">AI Agent Info</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">Explore the Hermes Agent workshop and local helpdesk info.</p>
+                </div>
+                <div class="text-pyyellow-700 dark:text-pyyellow font-bold text-sm inline-flex items-center gap-1 group-hover:text-sg-red transition-colors duration-300">
+                    Agent Workshop
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</section><!-- Footer -->
     <footer
         class="bg-gray-50 dark:bg-[#0f0f1a] border-t border-gray-200 dark:border-white/10 pt-16 pb-8 text-gray-600 dark:text-gray-400 text-sm mt-auto">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
