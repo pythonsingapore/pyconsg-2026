@@ -1,4 +1,4 @@
-# Build a Second Brain with Hermes Agent
+﻿# Build a Second Brain with Hermes Agent
 
 ### A beginner-friendly guide to an "AI Fluency" knowledge base using the built-in `llm-wiki` skill
 
