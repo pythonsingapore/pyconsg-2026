@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCon Singapore 2026</title>
+    <link rel="icon" href="assets/pyconsg26.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        pyblue: '#306998',
+                        pyyellow: '#FFD43B',
+                        'sg-orchid': '#9932CC',
+                        'sg-red': '#EF3340',
+                    },
+                    keyframes: {
+                        'scroll-left': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        'scroll-right': {
+                            '0%': { transform: 'translateX(-50%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'scroll-left': 'scroll-left 45s linear infinite',
+                        'scroll-right': 'scroll-right 45s linear infinite',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+        }
+
+        .dark .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #FFD43B, #EF3340);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.9));
+        }
+
+        .dark .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 1));
+        }
+
+        @media (min-width: 768px) {
+            .speakers-page .glass-card {
+                height: 28rem;
+                overflow-y: auto;
+                overscroll-behavior: contain;
+            }
+            .speakers-page.descriptions-hidden .glass-card {
+                height: auto;
+                min-height: 0;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white text-gray-900 font-sans antialiased selection:bg-sg-red selection:text-white dark:bg-[#0a0a14] dark:text-white">
+    <nav
+        class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-[#0a0a14]/90 dark:border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html"
+                    class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900 dark:text-white hover:opacity-90 transition-opacity">
+                    PyCon Singapore 2026
+                </a>
+            </div>
+            <div class="hidden md:flex justify-center flex-nowrap gap-8 font-medium">
+                <a href="coc.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Code of Conduct</a>
+                <a href="schedule.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Schedule</a>
+                <a href="speakers.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Speakers</a>
+                <a href="index.html#sponsors" class="whitespace-nowrap hover:text-sg-red transition-colors">Sponsors</a>
+                <a href="aiagent.html" class="whitespace-nowrap hover:text-sg-red transition-colors">AI Agent</a>
+                <a href="aira.html" class="whitespace-nowrap hover:text-sg-red transition-colors">AI Ready ASEAN</a>
+                <a href="hackathon.html" class="whitespace-nowrap hover:text-sg-red transition-colors">Hackathon</a>
+                <a href="tfr.html" class="whitespace-nowrap hover:text-sg-red transition-colors">TFR</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle"
+                    class="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 dark:border-white/20 dark:hover:bg-white/10"></button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex items-center p-2 text-gray-900 dark:text-white hover:opacity-70 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-[#0a0a14] border-t border-gray-200 dark:border-white/10">
+            <div class="px-6 py-4 flex flex-col gap-4 font-medium">
+                <a href="coc.html" class="hover:text-sg-red transition-colors">Code of Conduct</a>
+                <a href="schedule.html" class="hover:text-sg-red transition-colors">Schedule</a>
+                <a href="speakers.html" class="hover:text-sg-red transition-colors">Speakers</a>
+                <a href="index.html#sponsors" class="hover:text-sg-red transition-colors">Sponsors</a>
+                <a href="aiagent.html" class="hover:text-sg-red transition-colors">AI Agent</a>
+                <a href="aira.html" class="hover:text-sg-red transition-colors">AI Ready ASEAN</a>
+                <a href="hackathon.html" class="hover:text-sg-red transition-colors">Hackathon</a>
+                <a href="tfr.html" class="hover:text-sg-red transition-colors">TFR</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+<header class="relative pt-10 md:pt-12 pb-10 bg-gray-50 dark:bg-[#0f0f1a] overflow-hidden">
+	<div class="absolute inset-0 z-0 opacity-30">
+		<div class="absolute inset-0 bg-gradient-to-r from-pyblue/20 to-pyyellow/20"></div>
+	</div>
+	<div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+		<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+			Yiyuan Li <span class="text-gradient">Interview</span>
+		</h1>
+		<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light mb-8">
+			PyCon Singapore Education Summit 2026
+		</p>
+		<div class="flex flex-col items-center gap-6">
+			<img src="assets/yiyuan-li.png" alt="Yiyuan Li" class="w-44 h-44 rounded-full shadow-xl object-cover border border-white/50 dark:border-white/10">
+			<div class="glass-card p-6 rounded-2xl max-w-3xl mx-auto border border-white/20 text-left">
+				<p class="text-gray-700 dark:text-gray-200 leading-relaxed">
+					&quot;Learning to learn: a self-directed approach to programming&quot;, and his bio as a middle-school dropout and 42 student who treats CS as a discipline, not a career path. As he is now employed in a full-time software engineer role, he shares his learning journey over an email interview.
+					</p>
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="pt-10 pb-20 bg-white dark:bg-[#0a0a14]">
+	<div class="max-w-7xl mx-auto px-6 space-y-10">
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">The path you chose</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						You&#39;re described as a middle-school dropout and a high-agency self-learner. Walk us through the moment formal schooling stopped being the path for you - what were you moving away from, and what were you moving toward?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+						There wasn&#39;t one dramatic moment. It was slower than that. I just kept noticing the only time I felt good was after school, on my own. I&#39;d loved computers since primary school. My best friend was the same. He left for overseas around grade 3 and he&#39;s at Stanford now doing AI research. I couldn&#39;t follow him cuz some family stuff, so I stayed in a Chinese middle school. That system points at one target: be good at everything at once, for the Zhongkao and Gaokao. I&#39;m not built that way. I wanted to go deep on one thing. The stupid part is I was the kid who wanted to build computers and I wasn&#39;t allowed to touch one. Not even a phone. So my grades dropped, because my attention was somewhere the syllabus didn&#39;t care about. And once your grades drop in that environment, teachers stop treating you like a person. Some of them bully you. That&#39;s just how it goes. So leaving wasn&#39;t some big act of rebellion. The classroom had nothing I wanted, and after school had all of it. I remember building a tiny game once with Swift, a little guy you move around the screen, and you can control him surfing around the seas, and i felt more joy than anytime i was at the school.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">Learning with no syllabus</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						Your talk is about learning when nothing tells you what comes next. How do you actually decide what to learn next? What&#39;s the mechanism?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Honestly I don&#39;t really plan it. The field moves every single day, and when something new shows up my first instinct is to go build with it. Not read ten threads about it. Build something, even if it&#39;s bad.</p>
+						<p>The example I always come back to is from before Claude Code existed. People were just starting to talk about letting an AI actually operate a computer, and the second I saw the idea I wanted my own version. So I started writing harnesses for it (with python as my prototyping language). The model was GPT-3.5-turbo back then, the first one that could code at all. I learned a stupid amount from that one project like prompt engineering, LLM tool calling. Its basically the agent harnesses engineering nowadays. Almost nobody was doing it, and that one project taught me more about LLM use than any course could have, because there were no courses.</p>
+						<p>That&#39;s pretty much how I do everything. See something, rebuild it myself, then push on it until I get why it works and whether I can bolt it onto something I already have.</p>
+						<p>The other thing I actually believe in is sharpening the tool, and there is an art behind it. There&#39;s the work, and there&#39;s the thing that does the work. Building the side project versus building the components to make the side project. Shipping the feature versus refactoring so the next ten ship themselves. People who only ever do the task stay slow forever and never notice.</p>
+						<p>And the excuse budget is zero. We are in computer science. Everything is online, most of it is free, and you can have the frontier the same day it ships. So when someone says they don&#39;t know what to learn next, what they usually mean is they don&#39;t actually want to build anything. That&#39;s not a knowledge problem. It&#39;s laziness, and I&#39;d rather just call it that.</p>
+					</div>
+				</div>
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						When you hit a wall and there&#39;s no teacher to ask, what do the next thirty minutes look like?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>I Google it. Whatever you&#39;re stuck on, someone has almost certainly hit the exact same wall and written it down somewhere. And yeah, AI can hand you the answer instantly now too. But here&#39;s where I&#39;m going to be annoying about it. Reaching for AI the second you&#39;re stuck is the worst habit you can build. That&#39;s how you brain-rot yourself. The whole point of being stuck is the thinking that happens while you&#39;re stuck. If you outsource that every time, you never actually get smarter, you just get faster at copying.</p>
+						<p>So my rule is I have to take a real swing first. Google it, then go read how other people solved the adjacent version of the problem and adapt it to mine. That adaptation step is the actual skill. Anyone can paste an answer, but knowing why someone else&#39;s solution does or doesn&#39;t fit yours is the part that compounds.</p>
+						<p>I really think AI should comes in at the end, once I&#39;ve genuinely wrestled with something and I&#39;m still stuck, then it&#39;s a fantastic tool and I&#39;ll use it without guilt. So the order matters, always think first.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">Taste and technical choices</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						You went down to C for low-level thinking before reaching up to higher-level tools — the reverse of most curricula. Why down before up?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>When I started, I didn&#39;t reach for the friendly stuff. I went down to C first, to memory and the CPU and how the machine actually does what it does, and only later climbed back up toward the higher-level tools. That&#39;s backwards from how almost everyone learns now, and it&#39;s backwards on purpose. The reason is something I keep running into, in school and in industry both. People start at the top and they never look down. They learn the framework but not the machine underneath it, and then they spend a whole career standing on abstractions they couldn&#39;t explain if you paid them to. It works fine, right up until the day it doesn&#39;t.</p>
+						<p>Web development is the cleanest example. We&#39;ve stacked frameworks on frameworks on a language that was written in ten days, until nobody can see through any of it. Someone ships a site over a weekend, it turns out painfully slow, and they genuinely don&#39;t know why. They go read the best practices, except they&#39;re already following the best practices, and it&#39;s still slow. The real problem is three layers down, in the framework or the runtime or some box they&#39;ve never opened. And when you&#39;re sitting on a black box inside a black box inside a black box, there&#39;s nothing to do but file an issue and hope someone smarter shows up.</p>
+						<p>A lot of modern software running at something like a twentieth of what the hardware can actually do, and most of that loss is just abstraction we piled on without thinking. That&#39;s not a rounding error, that&#39;s most of your computer sitting idle because we decided we&#39;d rather not understand it. And it keeps getting worse. Jonathan Blow, a famous game programmer has a whole talk about how civilizations quietly lose the ability to build the things they depend on, not in some dramatic collapse, but because each generation only learns the layer above and forgets the one below. Software feels like it&#39;s heading exactly there. It&#39;s sliding toward slop, and now AI helps us produce that slop faster than ever. Cheap software, in quotes, more people pouring in, most of what comes out is garbage. I dont want to be mean, but it&#39;s just where we are.</p>
+						<p>Which is the whole reason the fundamentals are the best bet you can make. If you actually understand the low level, the memory, the performance, the security, how the machine really works, you become the person who can fix the thing nobody else in the room can touch. That&#39;s what makes you irreplaceable. Not as a career trick, just the plain fact that when the hard problem finally shows up, you&#39;re one of the few people who can solve it.</p>
+						<p>So part of this is honestly just how my brain is wired, I like everything low. And it pays me back constantly.</p>
+					</div>
+				</div>
+
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						Rust has a punishing learning curve. What did fighting through it teach you that an easier language never would have?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Rust is home for me, so I&#39;m biased on this, but the pain everyone complains about is the entire reason it&#39;s worth it. When people say they&#39;re &quot;fighting the borrow checker,&quot; what&#39;s really happening is the compiler is forcing them to answer questions they were always supposed to answer and had just been quietly ignoring. Who owns this piece of memory. How long does it live, who&#39;s allowed to change it, and when. In Python or JavaScript you never need to care about it. The language lets you stay ignorant and feel productive, right up until something mutates underneath you and you&#39;re staring at a bug at 3am that shows up one time in a thousand.</p>
+						<p>I like Rust cuz it just refuses to let you get there. It drags all of that to compile time. The borrow checker it&#39;s telling you there&#39;s a real flaw in how you structured the thing, before it ever runs. it&#39;s pointing at a bug you would have shipped.</p>
+						<p>And the part that surprised me is it doesn&#39;t stay in Rust. Once ownership lives in your head, you can&#39;t switch it off. I write Python now and I&#39;m still thinking about who owns this object and who&#39;s allowed to mutate it, even though nothing&#39;s checking. You start coding as if the borrow checker is watching when it isn&#39;t, and your code in every language gets better for it. An easier language would have let me write the same sloppy thing for years and never once told me it was sloppy.</p>
+						<p>So maybe you should get used to pain, life isnt easy but the struggle is just the compiler teaching you to think correctly before runtime teaches you the hard way, just like life.</p>
+					</div>
+				</div>
+
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						You picked Emacs and your AI tooling deliberately, &quot;instead of whatever&#39;s popular.&quot; How do you develop taste about tools - how do you separate signal from hype?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>This is the same idea as before, the balance between shaping the feature and building the habits that let you shape features faster. A tool is just that second thing made permanent. Emacs is the purest version of it I&#39;ve found.</p>
+						<p>The whole pitch of Emacs is that the tool bends to you instead of you bending to the tool. It&#39;s absurdly extensible. Anything you can imagine, you can make it do. You pull all your nice little TUIs and tools into one environment, keep a single config, and run that exact same setup on every device you own. One unified experience, shaped entirely around how you work. Most tools make you adapt to them, but this is the one that adapts to you.</p>
+						<p>That&#39;s really my whole point about taste. You deserve a tool that fits you, and you shouldn&#39;t spend years contorting yourself to fit a tool just because everyone else uses it. The default advice is &quot;use VS Code or you&#39;re not a real software engineer,&quot; and that&#39;s exactly the kind of hype I&#39;d ignore. Not because VS Code is bad, but because letting the crowd pick your tools means you never find out what actually fits your hand.</p>
+						<p>So the taste isn&#39;t &quot;use Emacs.&quot; and honestly I wouldn&#39;t recommend Emacs to most people. The taste is that you should try everything, keep sharpening the tools you keep, and when nothing fits, build your own.</p>
+					</div>
+				</div>
+
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						Where does Python sit for you? You frame it as what you reach for to get things done quickly. What does that say about how you think of languages as tools rather than identities?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Python is what I use when I just want to get something done. If I have an idea tonight and I want it working tonight, I write it in Python. The ecosystem is huge, it stays out of the way, and I get to think about the actual problem instead of the machine. Data/AI stuff, quick scripts, checking whether an idea is even worth building. That&#39;s where Python is good.</p>
+						<p>I know that sounds odd from someone who loves C and writes Rust most of the time. But it&#39;s not really a conflict. I use Rust when I care about correctness and speed and control. I use Python when I just need the thing done fast. They&#39;re for different situations and I&#39;m glad I have both.</p>
+						<p>The thing I actually believe is that a language is just a tool. It&#39;s not who you are. Once people start saying &quot;I&#39;m a Python developer&quot; or &quot;I&#39;m a Rust developer,&quot; they kind of trap themselves, and they end up using that one language for everything even when it doesn&#39;t fit.</p>
+						<p>I don&#39;t really get the language wars either. People arguing their language is better than yours. Most of the time that&#39;s just picking a team to cheer for instead of solving anything. I&#39;d rather know a few languages well so I&#39;m never stuck. Python&#39;s in my toolbox because it&#39;s the best tool for a certain kind of job. That&#39;s the whole reason.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">CS as a discipline, not a career</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						Tell us about something you learned purely because it was beautiful or interesting, with no job in mind.
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Is a paper that Ken Thompson wrote in 1968, on searching with regular expressions. It sounds quite dry, it&#39;s just matching a regex. But the idea inside it is one of the most beautiful things I&#39;ve run into.</p>
+						<p>The naive way to match a regex, and the way a lot of engines still do it, is to try one possible path through the pattern, and when it fails, back up and try another. That backtracking works, but on certain inputs it blows up and the time goes exponential. You can hang a whole server with one short string.</p>
+						<p>Thompson&#39;s idea is to stop guessing one path at a time. You turn the regex into a little state machine, and instead of trying one state, you track every state the machine could possibly be in at once, and walk through the text a single time. One pass, no backtracking, linear no matter how nasty the pattern is. And the part that still gets me is he did this in 1968, and he didn&#39;t just describe it, he had it compile the regex straight into machine code on the fly. That&#39;s basically a JIT compiler, decades before anyone used that word.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">AI in the loop</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						You use AI tools, but you&#39;re at a programme famous for productive struggle. Where&#39;s your personal line between AI helping you think and AI thinking for you?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>For me AI is a really good tool for exploring ideas. When something pops into my head, I can ask it to draft the idea out quickly and see whether it actually holds up. It also makes learning faster. When I jump into a new codebase or a new project, I use it to break the complicated parts into smaller pieces so I can study each one on its own.</p>
+						<p>But I don&#39;t use it to come up with the ideas for me. Most of the time I treat it like an interview partner. I ask it questions, it asks me questions back, and we go through the pros and cons together. There&#39;s a skill I use called Grill Me that does exactly this. It keeps throwing follow-up questions at me, especially on architecture problems, so I have to defend my thinking, and I usually end up at a better answer than I started with.</p>
+						<p>So the line is pretty clear for me. On the thinking and architecture side, like my 42 projects, I&#39;ll use AI to talk through a small piece or to get my head around a concept I haven&#39;t learned yet. But I don&#39;t let it do the actual coding. The coding is the part where I still struggle, and that struggle is the whole point. If I hand that over, I don&#39;t learn anything.</p>
+					</div>
+				</div>
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						The big fear here is that AI lets students skip the struggle that builds real understanding. As someone who uses it on purpose, how do you avoid that trap yourself?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Honestly I don&#39;t have a rule for it. I&#39;m the opposite, I&#39;m the kind of person who wants to lean on AI as much as I can. I keep asking it things, I keep trying to pull more out of it. When I ask AI to do something and I get back a result I don&#39;t actually follow, it makes me uneasy. I don&#39;t like that feeling at all. So I can&#39;t just take the answer and move on. I have to go back and understand it, or it sits there bothering me.</p>
+						<p>The hard part is that AI hallucinates. So I&#39;m always in this tension. I want to use it a lot, but I also can&#39;t trust it blindly, because some of what it tells me is just wrong. Being sure the information is actually correct matters to me more than getting something fast.</p>
+						<p>The way I deal with it is pretty simple. I&#39;ll push back and ask &quot;are you sure,&quot; and get it to double-check with a web search or another source. And a lot of the time I try to figure the thing out on my own first, then go to AI, because if you only rely on it you can waste a lot of time chasing an answer that was wrong from the start.</p>
+					</div>
+				</div>
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						If you were thirteen again, starting today with these tools available, would your journey look different - better or worse?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>To be honest, I think I&#39;d get worse. I don&#39;t think a 13-year-old should have this many tools, especially AI-powered ones, which are very powerful.</p>
+						<p>Like I said before, AI can easily give you the wrong answer because it hallucinates, and it can produce things that never happened. It definitely will.</p>
+						<p>When I was 13, I don&#39;t think I had any critical thinking. In some ways it makes me better, I can learn a lot faster, but as a kid I wouldn&#39;t know how to use it correctly. I might just become lazy because of it.</p>
+						<p>And here&#39;s the thing about AI, a lot of the time it sounds better than a professional. So a kid has no way to tell when it&#39;s wrong, because it&#39;s more confident and more polished than they are. That&#39;s why I think a kid with AI only really works if there&#39;s an adult around who understands the tool and can guide them. On their own, the kid just gets led somewhere they can&#39;t check. The tool can help, but you still need someone to guide you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">For the educators in the room</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						What&#39;s something well-meaning teachers do that accidentally kills the kind of agency you rely on?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>The thing that does the most damage is also the thing teachers think is kindness. They take every kid and push them down the same path, and they reward doing what you&#39;re told far more than being curious about anything. In their head they&#39;re protecting you, making sure you can survive in the real world. What they&#39;re actually doing is slowly draining the curiosity out of you.</p>
+						<p>I&#39;m honestly the perfect example. Middle school in China. My teachers didn&#39;t like my real hobbies at all. The whole system there is built so you can&#39;t specialize. You&#39;re supposed to be good at everything, math, physics, writing, all of it at once. And me being into computers? That did not go over well. They&#39;d basically tell me, &quot;you play on the computer, so you&#39;re not a good student, you&#39;re not focused on your pen and paper.&quot; Looking back it&#39;s kind of funny how backwards that is. The one thing I actually loved was the one thing they wanted me to stop doing.</p>
+						<p>And here&#39;s the part I&#39;d really want the teachers in this room to hear. A system like that is built to produce obedient, evenly average students. But average is exactly what the world is about to stop needing. AI already does average work better than an average person. The people who are going to matter are the ones who went unreasonably deep on something they actually cared about, and those are precisely the kids you label as problems, the ones who won&#39;t stay on the path, who won&#39;t put the computer down. When you smooth a curious kid into a compliant one, you think you&#39;re saving them. You&#39;re really just sanding off the one thing that would have made them irreplaceable. The kid staring out the window obsessed with one weird thing is usually the most valuable person in the room, and the system is built to treat them as the failure.</p>
+					</div>
+				</div>
+
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						If a teacher has one student who clearly learns better off-script, what&#39;s the single thing you&#39;d ask them to do for that student?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Easy, just guide them. That&#39;s the one thing. If you know the subject, do your best to help them go deeper. And if you don&#39;t, find someone who does and point the kid toward them.</p>
+						<p>That&#39;s honestly the thing I always wished I had. Someone who could tell me what to learn next, or even just sit down and figure it out with me. You don&#39;t have to be the expert. You just have to either be the guide, or be honest that you&#39;re not the right person and hand them to someone better, it&#39;s worth more than the whole syllabus.</p>
+					</div>
+				</div>
+
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						What would you say to the kid sitting in some classroom right now who feels like they don&#39;t fit the system - but isn&#39;t sure they&#39;re allowed to learn their own way?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+						<p>Okay, seriously, just do whatever you like. And be good at it. Find the thing you want to do, the thing you actually like, and if you really like it, just be good at it. That&#39;s it. There&#39;s nothing else. Try your best, put in everything you&#39;ve got, and be good at it. Choose one thing and master it, that&#39;s all. Do your best, and study as hard as you can on the subjects you love.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="glass-card p-6 md:p-8 rounded-2xl">
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">Closing</h2>
+			<div class="space-y-8">
+				<div>
+					<div class="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+						If you could put one sentence on the wall of every computing classroom, what would it be?
+					</div>
+					<div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+						Anyone can use the tools. Be the one who can build them.
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<a href="edusummit.html#speakers" class="inline-flex items-center text-sg-orchid hover:text-sg-red transition-colors underline underline-offset-4">
+				Back to Education Summit
+			</a>
+		</div>
+	</div>
+</section>
+<!-- Footer -->
+    <footer
+        class="bg-gray-50 dark:bg-[#0f0f1a] border-t border-gray-200 dark:border-white/10 pt-16 pb-8 text-gray-600 dark:text-gray-400 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">About</h3>
+                <p class="leading-relaxed mb-4">
+                    PyConSG 2026 is a community conference.
+                </p>
+                <p class="leading-relaxed">
+                    All attendees must strictly adhere to the <a href="coc.html"
+                        class="text-sg-red hover:underline dark:hover:text-white">code
+                        of conduct</a> during the conference.
+                </p>
+                <p class="leading-relaxed mt-4">
+                    Meet the <a href="https://pycon.sg/team.html" target="_blank" rel="noopener noreferrer"
+                        class="text-sg-red hover:underline dark:hover:text-white">team</a>.
+                </p>
+                <p class="leading-relaxed mt-4">
+                    <a href="https://pythonsingapore.github.io/pyconsg-2025/" target="_blank" rel="noopener noreferrer"
+                        class="text-sg-red hover:underline dark:hover:text-white">Archive</a>
+                </p>
+            </div>
+
+            <!-- Dates & Venue -->
+            <div>
+                <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">Dates & Venue</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-gray-900 dark:text-white font-semibold mb-1">When:</h4>
+                        <p>Friday 19th June 2026 - Sunday 21st June 2026</p>
+                    </div>
+                    <div>
+                        <h4 class="text-gray-900 dark:text-white font-semibold mb-1">Where:</h4>
+                        <p>Lifelong Learning Institute<br>11 Eunos Road 8<br>Singapore 408601<br>very near Paya Lebar MRT station (EW8 / CC9) :)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4">Social Media:</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://www.linkedin.com/company/python-user-group-singapore/"
+                            class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            Linkedin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/groups/pythonsg/"
+                            class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://groups.google.com/forum/#%21forum/pythonsg"
+                            class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Mailing List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pyconsg@computing.sg"
+                            class="flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                                </path>
+                            </svg>
+                            Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+    </footer>
+
+    <script>
+        (function () {
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialDark = stored ? stored === 'dark' : prefersDark;
+            document.documentElement.classList.toggle('dark', initialDark);
+            const hero = document.getElementById('hero-image');
+            const sets = [
+                { day: 'assets/marinabaysandsday.jpeg', night: 'assets/marinabaysandsnight.jpeg' },
+                { day: 'assets/gardensbythebayday.jpeg', night: 'assets/gardensbythebaynight.jpeg' },
+                { day: 'assets/changijewelday.jpeg', night: 'assets/changijewelnight.jpeg' }
+            ];
+            const heroIndex = Math.floor(Math.random() * sets.length);
+            function updateHero(isDark) {
+                if (!hero) return;
+                hero.src = isDark ? sets[heroIndex].night : sets[heroIndex].day;
+            }
+            updateHero(initialDark);
+
+            const btn = document.getElementById('theme-toggle');
+            function render() {
+                if (!btn) return;
+                const isDark = document.documentElement.classList.contains('dark');
+                btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.innerHTML = isDark
+                    ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><span class="ml-2">Dark</span>'
+                    : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M8.05 8.05L6.636 6.636m10.728 0l-1.414 1.414M8.05 15.95l-1.414 1.414"/></svg><span class="ml-2">Light</span>';
+            }
+            render();
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    const nowDark = !document.documentElement.classList.contains('dark');
+                    document.documentElement.classList.toggle('dark', nowDark);
+                    localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+                    render();
+                    updateHero(nowDark);
+                });
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
