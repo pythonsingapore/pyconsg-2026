@@ -10,6 +10,8 @@
     --teal: #ef3340;
     --teal-bright: #ff4b57;
     --teal-dark: #b81f29;
+    --blue: #306998;
+    --blue-bright: #3b7ab0;
     --ink: #1b2733;
     --muted: #5b6b78;
     --line: #ecdcdc;
@@ -54,6 +56,11 @@
   .stat { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 12px 20px; min-width: 110px; }
   .stat b { display: block; font-size: 1.7rem; line-height: 1; }
   .stat span { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; opacity: .9; }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; font-weight: 800; text-decoration: none; box-shadow: 0 12px 28px rgba(16,32,40,.18); transition: transform .15s, box-shadow .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(16,32,40,.22); }
+  .btn-blue { background: var(--blue); color: #fff; }
+  .btn-blue:hover { background: var(--blue-bright); }
   .controls {
     max-width: 1180px; margin: 28px auto 6px; padding: 0 22px;
     display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
@@ -139,6 +146,9 @@
   <section class="hero">
     <h1>Hackathon Projects Showcase</h1>
     <p class="tag-line">Architecting the Future of Lifelong Learning &middot; PyCon Singapore 2026</p>
+    <div class="hero-actions">
+      <a class="btn btn-blue" href="results.html">Winners Announced</a>
+    </div>
     <div class="stats">
       <div class="stat"><b>29</b><span>Projects</span></div>
       <div class="stat"><b>17</b><span>Job &amp; Skills</span></div>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyConSG 2026 Hackathon — Ranking</title>
+<link rel="icon" href="https://pycon.sg/assets/pyconsg26.png">
+<style>
+  :root {
+    --red: #ef3340; --red-bright: #ff4b57; --red-dark: #b81f29;
+    --blue: #306998; --blue-bright: #3b7ab0;
+    --ink: #1b2733; --muted: #5b6b78; --line: #ecdcdc; --bg: #fdf7f7; --card: #fff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.5; }
+  a { color: var(--red); }
+  header.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 12px 22px; display: flex; align-items: center; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--red-dark); text-decoration: none; font-size: 1.05rem; }
+  .brand img { height: 30px; }
+  .nav-links { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav-links a { color: var(--ink); text-decoration: none; font-size: .92rem; font-weight: 600; }
+  .nav-links a:hover { color: var(--red); }
+  .hero { background: linear-gradient(180deg, rgba(48,105,152,0.85), rgba(48,105,152,0.92)), url('https://pycon.sg/assets/hero-bg.png') center/cover no-repeat; color: #fff; text-align: center; padding: 56px 22px 44px; }
+  .hero h1 { margin: 0 0 8px; font-size: 2.3rem; letter-spacing: -.5px; }
+  .hero p { margin: 0; opacity: .95; }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; font-weight: 800; text-decoration: none; box-shadow: 0 12px 28px rgba(16,32,40,.18); transition: transform .15s, box-shadow .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(16,32,40,.22); }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-red:hover { background: var(--red-bright); }
+  /* podium */
+  .podium { max-width: 1040px; margin: -28px auto 0; padding: 0 22px; display: flex; gap: 16px; justify-content: center; align-items: stretch; flex-wrap: wrap; }
+  .pod { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 18px; text-align: center; box-shadow: 0 10px 28px rgba(184,31,41,.12); width: 224px; display: flex; flex-direction: column; }
+  .pod.first { border: 2px solid #e8b923; box-shadow: 0 12px 30px rgba(232,185,35,.28); }
+  .pod-medal { font-size: 2.6rem; }
+  .pod-rank { font-weight: 900; color: var(--red-dark); letter-spacing: .04em; font-size: 2.6rem; line-height: 1.05; margin: 4px 0 8px; }
+  .pod-title { font-weight: 700; margin: 6px 0 2px; font-size: 1.15rem; }
+  .pod-team { color: var(--muted); font-size: .85rem; }
+  .pod-members { font-size: .76rem; color: #3a4654; margin-top: 10px; line-height: 1.45; }
+  .pod-members .m-org { color: var(--muted); }
+  /* table */
+  .wrap { max-width: 1080px; margin: 40px auto 60px; padding: 0 22px; }
+  h2.sec { font-size: 1.1rem; color: var(--red-dark); margin: 0 0 14px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  thead th { background: var(--red-dark); color: #fff; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; padding: 12px 14px; text-align: left; }
+  thead th.c { text-align: center; }
+  tbody td { padding: 18px 14px; border-top: 1px solid var(--line); vertical-align: middle; }
+  .r-rank { width: 120px; text-align: center; white-space: nowrap; }
+  .rnum { font-size: 3rem; font-weight: 900; color: var(--red-dark); line-height: 1; display: block; }
+  .medal { font-size: 1.6rem; }
+  .p-title { font-weight: 700; font-size: 1.05rem; }
+  .p-team { color: var(--muted); font-size: .82rem; margin: 1px 0 6px; }
+  .p-links { margin-top: 8px; font-size: .82rem; }
+  .p-links a { font-weight: 700; text-decoration: none; }
+  .badge { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 2px 7px; border-radius: 999px; vertical-align: middle; }
+  .badge.jobs { background: #fde3e5; color: #b81f29; }
+  .badge.open { background: #eef1f4; color: #3a4654; }
+  .r-prize { width: 132px; text-align: center; }
+  .pz-openai { font-weight: 800; color: var(--red-dark); white-space: nowrap; }
+  .pz-openai span { font-size: .68rem; color: var(--muted); font-weight: 600; }
+  .pz-apify { margin-top: 5px; font-size: .7rem; font-weight: 700; color: #0f7a64; background: #e3f4ef; border-radius: 6px; padding: 2px 7px; display: inline-block; white-space: nowrap; }
+  .pz-gpt { margin-top: 5px; font-size: .7rem; font-weight: 700; color: #1b4d8f; background: #e6eefb; border-radius: 6px; padding: 2px 7px; display: inline-block; line-height: 1.3; }
+  tbody tr.rank-1 { background: #fff8e8; }
+  tbody tr.rank-2 { background: #eef1f4; }
+  tbody tr.rank-3 { background: #f7ece0; }
+  .p-members { font-size: .82rem; color: #3a4654; margin: 2px 0 8px; }
+  .p-members .m-label { font-weight: 700; color: var(--red-dark); }
+  .p-members .m-org { color: var(--muted); }
+  .note { color: var(--muted); font-size: .82rem; margin-top: 14px; }
+  .hm-wrap { max-width: 1080px; margin: 0 auto 50px; padding: 0 22px; }
+  .hm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .hm-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(16,32,40,.04); }
+  .hm-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .hm-rank { font-weight: 900; color: var(--red-dark); font-size: 1.6rem; }
+  .hm-reco { margin-left: auto; font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; background: #fde3e5; color: #b81f29; padding: 3px 9px; border-radius: 999px; }
+  .hm-title { font-weight: 700; font-size: 1.05rem; }
+  .hm-team { color: var(--muted); font-size: .82rem; margin: 1px 0 6px; }
+  .hm-members { font-size: .8rem; color: #3a4654; margin-bottom: 10px; line-height: 1.5; }
+  .hm-members .m-org { color: var(--muted); }
+  .hm-foot { margin-top: auto; display: flex; align-items: center; justify-content: flex-end; border-top: 1px solid var(--line); padding-top: 10px; }
+  .hm-links a { font-size: .8rem; font-weight: 700; text-decoration: none; margin-left: 12px; }
+  footer { background: var(--red-dark); color: #fbe1e3; padding: 28px 22px; text-align: center; font-size: .85rem; }
+  footer a { color: #ffd4d7; }
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 1.7rem; }
+    .nav-links { display: none; }
+    .pod.first { transform: none; }
+  }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="https://pycon.sg/index.html"><img src="https://pycon.sg/assets/pyconsg26.png" alt="PyConSG 2026">Hackathon Results</a>
+      <nav class="nav-links">
+        <a href="index.html">All Projects</a>
+        <a href="https://pycon.sg/hackathon.html">Hackathon</a>
+        <a href="https://pycon.sg/index.html">PyConSG 2026</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Top Performing Teams</h1>
+    <p>Architecting the Future of Lifelong Learning · PyCon Singapore 2026</p>
+    <div class="hero-actions">
+      <a class="btn btn-red" href="index.html">Projects Showcase</a>
+    </div>
+  </section>
+
+  <div class="podium">
+      <div class="pod first">
+        <div class="pod-medal">🥇</div>
+        <div class="pod-rank">#1</div>
+        <div class="pod-title">careersphere</div>
+        <div class="pod-team">careersphere</div>
+        <div class="pod-members">Rohan Kulshrestha <span class="m-org">(NTU)</span>, Kieran Ho <span class="m-org">(NUS)</span></div>
+      </div>
+      <div class="pod second">
+        <div class="pod-medal">🥈</div>
+        <div class="pod-rank">#2</div>
+        <div class="pod-title">Clicky</div>
+        <div class="pod-team">git comit -m &quot;feat: win&quot;</div>
+        <div class="pod-members">Abhishek Vulla <span class="m-org">(Singapore University of Technology &amp; Design (SUTD))</span>, Abel Lee Bing Heng <span class="m-org">(Singapore University of Technology &amp; Design (SUTD))</span></div>
+      </div>
+      <div class="pod third">
+        <div class="pod-medal">🥉</div>
+        <div class="pod-rank">#3</div>
+        <div class="pod-title">Career Snapshot SG</div>
+        <div class="pod-team">ong</div>
+        <div class="pod-members">Jovan <span class="m-org">(NUS)</span>, Ace Yip <span class="m-org">(Raffles Institution)</span>, Glenn Wu <span class="m-org">(NUS)</span></div>
+      </div>
+      <div class="pod third">
+        <div class="pod-medal">🥉</div>
+        <div class="pod-rank">#3</div>
+        <div class="pod-title">SkillsBridge SG</div>
+        <div class="pod-team">WhyNotTry Ya ?</div>
+        <div class="pod-members">PRAKASH S/O A DIVAKARAN <span class="m-org">(ITE)</span>, Clarence Chung <span class="m-org">(ITE)</span></div>
+      </div>
+  </div>
+
+  <div class="wrap">
+    <h2 class="sec">Full Top 10 Ranking</h2>
+    <table>
+      <thead>
+        <tr>
+          <th class="c">Rank</th>
+          <th>Project</th>
+          <th class="c">Prizes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="rank-1">
+        <td class="r-rank"><span class="rnum">1</span> <span class="medal">🥇</span></td>
+        <td class="r-proj">
+          <div class="p-title">careersphere <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">careersphere</div>
+          <div class="p-members"><span class="m-label">Team:</span> Rohan Kulshrestha <span class="m-org">(NTU)</span>, Kieran Ho <span class="m-org">(NUS)</span></div>
+          <div class="p-links"><a href="https://careersphere-197801188818.asia-southeast1.run.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/rohanz/careersphere" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,800<span> OpenAI</span></div><div class="pz-gpt">+ 6 mo GPT-Pro / member</div><div class="pz-apify">+ $250 Apify</div></td>
+      </tr>
+      <tr class="rank-2">
+        <td class="r-rank"><span class="rnum">2</span> <span class="medal">🥈</span></td>
+        <td class="r-proj">
+          <div class="p-title">Clicky <span class="badge open">Open Track</span></div>
+          <div class="p-team">git comit -m &quot;feat: win&quot;</div>
+          <div class="p-members"><span class="m-label">Team:</span> Abhishek Vulla <span class="m-org">(Singapore University of Technology &amp; Design (SUTD))</span>, Abel Lee Bing Heng <span class="m-org">(Singapore University of Technology &amp; Design (SUTD))</span></div>
+          <div class="p-links"><a href="https://youtu.be/ajIO6p7pR6M" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/AbhishekVulla/clicky-windows" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,650<span> OpenAI</span></div><div class="pz-gpt">+ 6 mo GPT-Pro / member</div><div class="pz-apify">+ $250 Apify</div></td>
+      </tr>
+      <tr class="rank-3">
+        <td class="r-rank"><span class="rnum">3</span> <span class="medal">🥉</span></td>
+        <td class="r-proj">
+          <div class="p-title">Career Snapshot SG <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">ong</div>
+          <div class="p-members"><span class="m-label">Team:</span> Jovan <span class="m-org">(NUS)</span>, Ace Yip <span class="m-org">(Raffles Institution)</span>, Glenn Wu <span class="m-org">(NUS)</span></div>
+          <div class="p-links"><a href="https://pycon-2026.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/jovantan88/pycon-2026" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,350<span> OpenAI</span></div><div class="pz-gpt">+ 6 mo GPT-Pro / member</div><div class="pz-apify">+ $250 Apify</div></td>
+      </tr>
+      <tr class="rank-3">
+        <td class="r-rank"><span class="rnum">3</span> <span class="medal">🥉</span></td>
+        <td class="r-proj">
+          <div class="p-title">SkillsBridge SG <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">WhyNotTry Ya ?</div>
+          <div class="p-members"><span class="m-label">Team:</span> PRAKASH S/O A DIVAKARAN <span class="m-org">(ITE)</span>, Clarence Chung <span class="m-org">(ITE)</span></div>
+          <div class="p-links"><a href="https://skillsbridgesg.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/Prakashash18/skillsbridgesg" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,350<span> OpenAI</span></div><div class="pz-gpt">+ 6 mo GPT-Pro / member</div><div class="pz-apify">+ $250 Apify</div></td>
+      </tr>
+      <tr class="rank-5">
+        <td class="r-rank"><span class="rnum">5</span></td>
+        <td class="r-proj">
+          <div class="p-title">PathForge AI <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">Consistenceyyyy</div>
+          <div class="p-members"><span class="m-label">Team:</span> Ler Jun Wei <span class="m-org">(Universiti Tunku Abdul Rahman)</span>, Har Sze Hao <span class="m-org">(Universiti Tunku Abdul Rahman)</span>, Wong Kenji <span class="m-org">(Universiti Tunku Abdul Rahman)</span></div>
+          <div class="p-links"><a href="https://pathforge-ai-pycon26.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/Luci6n/pycon26" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,000<span> OpenAI</span></div></td>
+      </tr>
+      <tr class="rank-5">
+        <td class="r-rank"><span class="rnum">5</span></td>
+        <td class="r-proj">
+          <div class="p-title">Career-Skills-Radar <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">trackerhub</div>
+          <div class="p-members"><span class="m-label">Team:</span> Erick Chandra <span class="m-org">(Climate Action Data Trust)</span></div>
+          <div class="p-links"><a href="https://career-skills-radar.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/erickch123/career-skills-radar" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$1,000<span> OpenAI</span></div></td>
+      </tr>
+      <tr class="rank-7">
+        <td class="r-rank"><span class="rnum">7</span></td>
+        <td class="r-proj">
+          <div class="p-title">SkillAtlas AI <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">Squad T</div>
+          <div class="p-members"><span class="m-label">Team:</span> Tan Wei Siang <span class="m-org">(Zenika)</span>, Rollin Tan <span class="m-org">(Zenika)</span></div>
+          <div class="p-links"><a href="https://youtu.be/dH_eWu5Ngtc" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/wstannnnn/pycon26-track1" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$650<span> OpenAI</span></div></td>
+      </tr>
+      <tr class="rank-7">
+        <td class="r-rank"><span class="rnum">7</span></td>
+        <td class="r-proj">
+          <div class="p-title">SkillBridge SG — Explainable Career Pathways for Lifelong Learners <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">SkillBridge SG</div>
+          <div class="p-members"><span class="m-label">Team:</span> Abel Chin <span class="m-org">(Singapore Management University)</span></div>
+          <div class="p-links"><a href="https://abelcjh.github.io/pyconsg26-lifelong-pathfinder/" target="_blank" rel="noopener">Demo&nbsp;↗</a> &middot; <a href="https://github.com/abelcjh/pyconsg26-lifelong-pathfinder" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$650<span> OpenAI</span></div></td>
+      </tr>
+      <tr class="rank-9">
+        <td class="r-rank"><span class="rnum">9</span></td>
+        <td class="r-proj">
+          <div class="p-title">Casey: Explainable Career Pathway Recommender <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">jingxuan</div>
+          <div class="p-members"><span class="m-label">Team:</span> Jing Xuan</div>
+          <div class="p-links"><a href="https://github.com/jingxuan-s/pycon_26_hackathon" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$350<span> OpenAI</span></div></td>
+      </tr>
+      <tr class="rank-10">
+        <td class="r-rank"><span class="rnum">10</span></td>
+        <td class="r-proj">
+          <div class="p-title">Skills Future Browser Extension <span class="badge jobs">Job &amp; Skills</span></div>
+          <div class="p-team">Morgana</div>
+          <div class="p-members"><span class="m-label">Team:</span> Alson To Din Kwan <span class="m-org">(Singapore Polytechnic)</span>, Alvin To Yie Kwan <span class="m-org">(Singapore Institute of Technology)</span></div>
+          <div class="p-links"><a href="https://github.com/alvinto27/Skillfuture-Skills-Extension" target="_blank" rel="noopener">Code&nbsp;↗</a></div>
+        </td>
+        <td class="r-prize"><div class="pz-openai">$200<span> OpenAI</span></div></td>
+      </tr>
+      </tbody>
+    </table>
+    <p class="note">Ties share a rank.</p>
+  </div>
+
+  <div class="hm-wrap">
+    <h2 class="sec">Honorable Mentions &mdash; Each team receives $30 Grab vouchers</h2>
+    <div class="hm-grid">
+        <div class="hm-card">
+          <div class="hm-top"><span class="hm-rank">#11</span><span class="badge jobs">Job &amp; Skills</span><span class="hm-reco">Polished, deployed product</span></div>
+          <div class="hm-title">myskills.fit</div>
+          <div class="hm-team">myskills.fit</div>
+          <div class="hm-members">Edwin Ng, Joshua Ng</div>
+          <div class="hm-foot"><span class="hm-links"><a href="https://myskills.fit" target="_blank" rel="noopener">Demo&nbsp;↗</a><a href="https://github.com/edwin-nz/myskills.fit" target="_blank" rel="noopener">Code&nbsp;↗</a></span></div>
+        </div>
+        <div class="hm-card">
+          <div class="hm-top"><span class="hm-rank">#11</span><span class="badge open">Open Track</span><span class="hm-reco">Responsible-AI design</span></div>
+          <div class="hm-title">LegacyOSLite</div>
+          <div class="hm-team">LegacyOSLite</div>
+          <div class="hm-members">Vishalan Karunanithi <span class="m-org">(SIM UOW DSS)</span>, Sakthi Prakash</div>
+          <div class="hm-foot"><span class="hm-links"><a href="https://legacy-os-lite.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a><a href="https://github.com/Vishingvell/legacyos-lite" target="_blank" rel="noopener">Code&nbsp;↗</a></span></div>
+        </div>
+        <div class="hm-card">
+          <div class="hm-top"><span class="hm-rank">#13</span><span class="badge jobs">Job &amp; Skills</span><span class="hm-reco">Strong data grounding</span></div>
+          <div class="hm-title">Skill Gap Course Finder</div>
+          <div class="hm-team">nomnom</div>
+          <div class="hm-members">Inez Chai Yu En, Reanne Teo Woo Hng</div>
+          <div class="hm-foot"><span class="hm-links"><a href="https://drive.google.com/file/d/1j2SxAvkVewZvYfqYlpwzUX4_IMAjY4k9/view?usp=sharing" target="_blank" rel="noopener">Demo&nbsp;↗</a><a href="https://github.com/reannetwh-netizen/PyCon-Hackathon-Inez-Reanne/tree/main" target="_blank" rel="noopener">Code&nbsp;↗</a></span></div>
+        </div>
+        <div class="hm-card">
+          <div class="hm-top"><span class="hm-rank">#14</span><span class="badge jobs">Job &amp; Skills</span><span class="hm-reco">Well-rounded engineering</span></div>
+          <div class="hm-title">CareerNavigator</div>
+          <div class="hm-team">vlojster</div>
+          <div class="hm-members">Vignesh Sundararaj <span class="m-org">(Singapore Management University)</span>, Jonathan Leow Guan Wei <span class="m-org">(Singapore Management University)</span>, Lorayne Lim Cheng Hwee <span class="m-org">(Nanyang Technological University)</span></div>
+          <div class="hm-foot"><span class="hm-links"><a href="https://vlojster-8wxg.vercel.app/" target="_blank" rel="noopener">Demo&nbsp;↗</a><a href="https://github.com/vigalodean/vlojster" target="_blank" rel="noopener">Code&nbsp;↗</a></span></div>
+        </div>
+        <div class="hm-card">
+          <div class="hm-top"><span class="hm-rank">#14</span><span class="badge open">Open Track</span><span class="hm-reco">Technical execution</span></div>
+          <div class="hm-title">Sardine for BespokeSynth</div>
+          <div class="hm-team">Synthurion</div>
+          <div class="hm-members">Paul Amazona</div>
+          <div class="hm-foot"><span class="hm-links"><a href="https://www.youtube.com/watch?v=2WJcpik80Eo" target="_blank" rel="noopener">Demo&nbsp;↗</a><a href="https://github.com/whatevergeek/sardine-bespoke-module" target="_blank" rel="noopener">Code&nbsp;↗</a></span></div>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    PyCon Singapore 2026 · 19&ndash;21 June 2026 · Lifelong Learning Institute, Singapore &middot; <a href="index.html">View all projects</a>
+  </footer>
+</body>
+</html>
